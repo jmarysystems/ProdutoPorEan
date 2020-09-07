@@ -9,12 +9,15 @@ setTimeout(function(){
     
     try{           
         
-        //alert( "dddd" );
+        //alert( "dddd" ); 
         
         document.getElementById("lista_de_produtos_jmary_systems").innerHTML = "";
         
         document.getElementById("div_consultar_produto").style.display = 'none'; 
+        document.getElementById("camera").style.display = 'none'; 
         document.getElementById("div_mostrar_produto").style.display = 'block'; 
+        
+        document.getElementById("ean_manual").value = "";
 
         document.getElementById("div_consultar_produto").innerHTML = html_da_div_consultar_produto;
         
