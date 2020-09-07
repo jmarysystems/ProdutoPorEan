@@ -721,15 +721,22 @@ jQuery(document).ready(function(){
             //alert(
             //    'Parametro Encontrado: ' + parametros[cont] + '\n' 
             //);
+            
+            if( cont === 1 ){
 
-            if( parametros[cont] !== undefined ){
+                if( parametros[cont] !== undefined ){
                 
-                var dados = parametros[cont].split('=');
+                    var dados = parametros[cont].split('=');
                 
-                alert(
-                    'Parametro Encontrado: ' + dados[0] + '\n' +
-                    'Valor Parâmetro: ' + dados[1]
-                );
+                    //alert(
+                    //    'Parametro Encontrado: ' + dados[0] + '\n' +
+                    //    'Valor Parâmetro: ' + dados[1]
+                    //);
+                    abrir_div_mostrar_produto(
+                        dados[1].trim(),
+                        document.getElementById ('div_consultar_produto').innerHTML
+                    );
+                }
             }
         }
     }
