@@ -22,7 +22,7 @@
         function baixar_tabela( count_x, ean_a_ser_consultado, html_da_div_consultar_produto ){
             
             try{
-                var id_planilha = "1bHoSZsLTtMs35GfyBb8jw2uM6cyHQiw1EZBtHVT9SxE";
+                var id_planilha = "1dbkOx7Ai_k36TnCvofd6xyH21K_gAuBoRQaLQ_ZLq8k";
                 var urlxx = "https://sheets.googleapis.com/v4/spreadsheets/"+ id_planilha +"/values/A:D?key=AIzaSyBwiMCywJRFQHuuksWdhqwjOrR5mDaWJYs";
                 
                 ////////////////////////////////////////////////////////////////////////////

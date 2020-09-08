@@ -5,16 +5,18 @@
         <title></title>
         <meta charset="UTF-8">  
         
-        <!-- <meta http-equiv="refresh" content=1;url="www.jmarysystems.com.br"> -->   
+        <!-- <meta http-equiv="refresh" content=1;url="www.jmarysystems.com.br"> -->    
         
         <meta name="viewport" content="width=device-width, initial-scale=1.0">    
                 
         <script type="text/javascript" src='arquivos/js/js_produto_por_produto/0001_00_baixar_tabela.js'></script>
         <script type="text/javascript" src='arquivos/js/js_produto_por_produto/0001_01_receber_tabela_e_dividir_em_linhas.js'></script>
         <script type="text/javascript" src='arquivos/js/js_produto_por_produto/0001_02_receber_linha.js'></script>
-        <script type="text/javascript" src='arquivos/js/js_produto_por_produto/0001_02_receber_linha_1.js'></script>
+        <script type="text/javascript" src='arquivos/js/js_produto_por_produto/0001_02_receber_ean_e_pesquisar_sheet.js'></script>
         <script type="text/javascript" src='arquivos/js/js_produto_por_produto/0001_03_adicionar_linha_no_html.js'></script>
         <script type="text/javascript" src='arquivos/js/js_produto_por_produto/9999_1_utilitario_baixar_imagem.js'></script>
+        <script type="text/javascript" src='arquivos/js/js_produto_por_produto/zzzz_dados_produtos.js'></script>
+        <script type="text/javascript" src='arquivos/js/js_produto_por_produto/0001_04_adicionar_linha_local.js'></script>
         
         <script type="text/javascript" src='arquivos/js/imprimir_div.js'></script>
         
@@ -175,11 +177,15 @@
         </audio>
  
 <!-- 14 letras para o nome, nome do meio e último nome iphone_sms-->           
-        <img id="img_conversa_user_logado" src="arquivos/imagens/003_login/cleilson.jpg" alt="" width="50" height="50" style="display: none;" >
+        <img id="img_conversa_user_logado" src="arquivos/imagens/003_login/cleilson.jpg" alt="" width="50" height="50" style="display: none;" >              
                 
+        <input type="hidden" id="ean_atual" value="null">
+        
         <input type="hidden" id="tabela_produtos_por_ean_baixada" value="null">
         
-        <input type="hidden" id="ean_atual" value="null">
+        <div id="div_produtos_por_ean_baixada" style="display: none; padding: 0; margin: 0; width:100%; ">
+            
+        </div>
         
 
 <!-- +++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++ 
@@ -385,43 +391,46 @@
 +++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++--> 
 <div id="div_consultar_produto" style="padding: 0; margin: 0;">
     
-    <img id="btn" src="arquivos/imagens/003_login/app.png" 
+<ul style="list-style:none; padding: 0px; margin: 0px; width:100%;" >    
+    
+    <li style="padding: 0px; margin: 0px; width:100%; color:black; font-family:  Arial, Helvetica, sans-serif; font-size: 150%;">
+        
+        <img src="arquivos/imagens/002_menu/impressora.png" 
+                                                    style="cursor: pointer; float: left; padding-left: 5px; padding-top: 2px;"
+                                                    onclick="printDiv('div_consultar_produto');"
+                                                    alt="Imprimit" width="30" height="30px">
+        
+        <img id="btn" src="arquivos/imagens/003_login/app.png" 
                                                     style="cursor: pointer; float: right"
                                                     onclick="window.open('http://zxing.appspot.com/scan?ret=http://www.jmarysystems.com.br/ProdutoPorEan/web/index.html?ean=1', '_parent');"
                                                     title="Voltar" width="80" height="60px">    
+    </li> 
+                            
+    <li align="center"  style="padding: 0px; margin: 0px; width:100%; color:black; font-family:  Arial, Helvetica, sans-serif; font-size: 150%;">
+        <a style="color:black; font-family:  Arial, Helvetica, sans-serif; font-size: 150%; text-decoration: none;"
+            onMouseover=" this.style.color='#fff'; this.style.backgroundColor='#23871C'; "
+            onMouseout="  this.style.color='black'; this.style.backgroundColor='#D3D3D3'; "       
+        > 
+            Digite o Ean
+        </a>
+    </li> 
     
-    <table border="0" cellpadding="1" cellspacing="0" style="width:100%;">
+    <li align="center"  style="padding: 0px; margin: 0px; width:100%; color:black; font-family:  Arial, Helvetica, sans-serif; font-size: 150%;">
         
-        <tr>
-            <td align="center" style="background-color: #D3D3D3;"> 
-            
-                <div style="padding-top: 4px; padding-bottom: 1px; background-color: #3A3A3A; color:#fff; font-family:  Arial, Helvetica, sans-serif; font-size: 120%;">
-                
-                Digite o Ean 
-                </div>
-            </td>
-        </tr> 
+        <textarea id="ean_manual" name="ean_manual" rows="1" cols="50" style="background-color: #3A3A3A; width:90%; height: 80px; color:#fff; font-family:  Arial, Helvetica, sans-serif; font-size: 150%;">  </textarea>
+    </li>
+    
+    <li align="center">
         
-        <tr>
-            <td align="center" style="background-color: #D3D3D3;"> 
-            
-                <textarea id="ean_manual" name="ean_manual" rows="1" cols="50" style="background-color: #3A3A3A; width:90%; height: 80px; color:#fff; font-family:  Arial, Helvetica, sans-serif; font-size: 150%;">  </textarea>
-            </td>
-        </tr> 
-        
-        <tr>
-            <td align="center" style="background-color: #D3D3D3;"> 
-            
-                <img src="arquivos/imagens/003_login/enviar.png" 
-                    style="cursor: pointer; padding-top: 4px;"
+        <img src="arquivos/imagens/003_login/enviar.png" 
+                    style="cursor: pointer; padding-top: 1px;"
                     onclick="abrir_div_mostrar_produto(
                         document.getElementById ('ean_manual').value,
                         document.getElementById ('div_consultar_produto').innerHTML
                     );" alt="" width="135" height="45">
-            </td>
-        </tr> 
+    </li>
+</ul>
     
-    </table>
     
     <div id="scanner-container" style="padding: 0; margin: 0; width:100%; height: 100%;">
     
@@ -678,7 +687,23 @@
 -1
 -2    
 -->  
- <script type="text/javascript">
+<script type="text/javascript">
+    /*
+    var id_planilha = "1dbkOx7Ai_k36TnCvofd6xyH21K_gAuBoRQaLQ_ZLq8k";
+    var url = "https://sheets.googleapis.com/v4/spreadsheets/"+ id_planilha +"/values/A:D?key=AIzaSyBwiMCywJRFQHuuksWdhqwjOrR5mDaWJYs";
+    
+    $(document).ready(function(){
+	$.get( url, function(data) {
+		console.log('encontrei ' + data.length + ' registros');
+		for(var linha=0; linha < data.length; linha++)
+		{
+			console.log('Registros da linha ' + linha);
+			console.log(data[linha]);
+		}		
+	});
+    });
+    */
+     
      
      function aumentar_imagem( id ){
          
@@ -696,8 +721,43 @@
         }
      }
      
-jQuery(document).ready(function(){
-    
+     
+     
+     function baixar_tabela(){
+//INÍCIO - BAIXANDO TABELA PRODUTOS POR EAN  
+    try{
+        var id_planilha = "1dbkOx7Ai_k36TnCvofd6xyH21K_gAuBoRQaLQ_ZLq8k";
+        var url = "https://sheets.googleapis.com/v4/spreadsheets/"+ id_planilha +"/values/A:D?key=AIzaSyBwiMCywJRFQHuuksWdhqwjOrR5mDaWJYs";
+        
+        $.ajax({
+            url: url,
+            success: function(data) {
+                document.getElementById("tabela_produtos_por_ean_baixada").value = JSON.stringify(data);
+            },
+            error : function(error) {
+                //alert(error);
+            }
+        });
+        
+        /*
+        jQuery.getJSON(url).success(function(data) {
+            //document.getElementById("tabela_produtos_por_ean_baixada").value = JSON.stringify(data);
+        }).error(function(message) {
+            //console.error('error' + message); 
+        }).complete(function() {
+            //console.log('completed!');                    
+        });
+        */
+    }catch(Exception){}
+//FIM - BAIXANDO TABELA PRODUTOS POR EAN           
+     }
+     
+     
+     
+     function setando_parametros(){
+//INÍCIO - BAIXANDO TABELA PRODUTOS POR EAN  
+    try{
+        
     //captura a url da página
     var url = window.location.href; 
     //alert("URL CAPTURADA: \n\n" + url);
@@ -742,52 +802,16 @@ jQuery(document).ready(function(){
                 }
             }
         }
-    }
-      
-//INÍCIO - BAIXANDO TABELA PRODUTOS POR EAN  
-    try{
-        var id_planilha = "1bHoSZsLTtMs35GfyBb8jw2uM6cyHQiw1EZBtHVT9SxE";
-        var url = "https://sheets.googleapis.com/v4/spreadsheets/"+ id_planilha +"/values/A:D?key=AIzaSyBwiMCywJRFQHuuksWdhqwjOrR5mDaWJYs";
-        jQuery.getJSON(url).success(function(data) {
-            document.getElementById("tabela_produtos_por_ean_baixada").value = JSON.stringify(data);
-        }).error(function(message) {
-            //console.error('error' + message); 
-        }).complete(function() {
-            //console.log('completed!');                    
-        });
+    }        
     }catch(Exception){}
-//FIM - BAIXANDO TABELA PRODUTOS POR EAN    
-
-
-
-
-
-
-
-// função que calcula e aplica a centralização
-  function centralizar(){
-    $('ean_manual').css({ 'height' : '0' }); // reseta a altura para nova contagem
-
-    var textareaSHeight = $('ean_manual')[0].scrollHeight, // pega o valor do scroll do textarea
-            textareaHeight = $('ean_manual').height(); // pega o valor da altura do textarea
-
-    // verifica se tem scroll ou não
-    if (textareaHeight < textareaSHeight) {
-        var divHeight = $('div').height() / 2, // pega a metade altura da div
-                top = divHeight - (textareaSHeight / 2); // calculo final do valor top
-
-      // aplica a altura do textarea e o valor top
-        $('ean_manual').css({ 'height' : textareaSHeight+'px', 'top' : top+'px' });
-    }
-  }
-
-  centralizar(); // aplica o efeito inicial
-
-  // ajuste automático enquanto digitar
-  $('ean_manual').on('keydown', function(){
-    centralizar();
-  });
-
+//FIM - BAIXANDO TABELA PRODUTOS POR EAN           
+     }
+     
+jQuery(document).ready(function(){
+    
+    
+    setTimeout(function(){ baixar_tabela(); }, 0);
+    setTimeout(function(){ setando_parametros(); }, 0);
 
 });
     
