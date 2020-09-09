@@ -33,15 +33,46 @@ setTimeout(function(){
                     
                     //alert( ean_p.trim() + " - " + ean.trim() + " - " + des + " - " + cat + " - " + umb );
                     
-                    adicionar_linha_local( ean_p, des, cat, umb );     
-                    achou = true;
+                    //var end_img = "../Imagens/" + "sem_imagem" + ".gif";
+                    
+                    try{
+                        var img = new Image();
+	                img.src = "../Imagens/" + ean + ".gif";
+                        img.onload = function() {
+                            
+                            adicionar_linha_local( ean_p, des, cat, umb, "../Imagens/" + ean + ".gif" );
+	                }
+	                img.onerror = function() {
+                            
+                            img.src = "../Imagens/" + ean + ".png";
+                            img.onload = function() {
+                                
+                                adicionar_linha_local( ean_p, des, cat, umb, "../Imagens/" + ean + ".png" );
+                            }
+                            img.onerror = function() {
+                                
+                                img.src = "../Imagens/" + ean + ".jpg";
+                                img.onload = function() {
+                                    
+                                    adicionar_linha_local( ean_p, des, cat, umb, "../Imagens/" + ean + ".jpg" );
+                                }
+                                img.onerror = function() {
+                                    
+                                    adicionar_linha_local( ean_p, des, cat, umb, "../Imagens/" + "sem_imagem2" + ".gif" );
+                                }
+                            }
+                        }
+                    }catch(Exception){} 
+                    
+                    //adicionar_linha_local( ean_p, des, cat, umb, end_img );
+                    achou = true;  
                     break;
                 }
             }            
         }
         
         if( achou === false ){
-            adicionar_linha_local( ean_p, "Produto não Registrado!", "--------------", "----" );  
+            adicionar_linha_local( ean_p, "Produto não Registrado!", "--------------", "----", "../Imagens/" + "sem_imagem2" + ".gif" );
         }
                                                 
     }catch(Exception){}  

@@ -3,7 +3,7 @@
  * and open the template in the editor.
  */
 
-function adicionar_linha_local( ean, des, cat, umb ) {
+function adicionar_linha_local( ean, des, cat, umb, end_img ) {
     
 setTimeout(function(){
 try{  
@@ -30,8 +30,8 @@ try{
 "                                                                " +
 "                                                                <li style=\"float: left;\">" +
 "                                                                    " +
-"<!-- id=\"imagem_do_ean\" +++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++ -->                                                                      " +
-"                                                                    <img " + "id=" + ean + " class=\"prod_ean\"  src=\"../Imagens/" + ean + ".gif\" alt=" + ean + " onclick=\"aumentar_imagem(" + ean + ");\" width=\"150\" height=\"150\" style=\"cursor: zoom-in\" > " +
+"<!-- id=\"imagem_do_ean\" +++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++ .gif-->                                                                      " +
+"                                                                    <img " + "id=" + ean + " class=\"prod_ean\"  src=\""+ end_img + "\" alt=" + ean + " onclick=\"aumentar_imagem(" + ean + ");\" width=\"150\" height=\"150\" style=\"cursor: zoom-in\" > " +
 "                                                                </li>    " +
 "                                                                " +
 "                                                                <li style=\"float: left;\"> " +
