@@ -463,22 +463,24 @@
                 
                 document.getElementById("ul_meus_contatos").innerHTML = "listar001 -- " + Exception;
             }     
-            
+                                    
             if( contador === 0 ){
                 
+                //alert( "Fim" );
                 finalizando_igual_a_zero( contador );
-            }                    
+            }     
+            //else{ alert( contador ); }
         }
         
-        function finalizando_igual_a_zero(){
+        function finalizando_igual_a_zero( contador ){
                            
             try{
                 
                 //setTimeout(function(){
                     
-                    _01_controle_loop_sem_fim();
+                    _01_controle_loop_sem_fim( true );
                     
-                //}, 500); 
+                //}, 0); 
                 
             }catch(Exception){}        
         }
@@ -620,7 +622,7 @@
 "                style=\"cursor: pointer; \"" +
 "                alt=\"\" width=\"140\" height=\"50\"" +
 
-"                onclick=\"enviar_mensagem(" + "document.getElementById ('" + "escrever_mensagem" + web_id + "').value," + "document.getElementById ( '" + "mensagem_a_enviar" + web_id + "' ).value );\">" +
+"                onclick=\"enviar_mensagem(" + "document.getElementById ('" + "escrever_mensagem" + web_id + "').value," + "document.getElementById ( '" + "mensagem_a_enviar" + web_id + "' ).value ); voltar_para_todas_as_mensagem('" + web_id + "'); \">" +
 "        </td>" +
 
 "        <td style=\"background-color: #D3D3D3; width:20%;\"> </td>" +

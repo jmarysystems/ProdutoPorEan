@@ -3,7 +3,7 @@
  * and open the template in the editor.
  */
 
-        function registrar_mensagem_a__direita( jm_id_msg_num_web_receb, web_id, hora, mensagem_a_enviar ){
+        function registrar_mensagem_a__direita( primeira_vez, jm_id_msg_num_web_receb, web_id, hora, mensagem_a_enviar ){
                 
             var retorno = false;
             
@@ -38,14 +38,14 @@
                 
                 if( retorno === false ){
                     
-                    registrar_mensagem_enviada( web_id, hora, mensagem_a_enviar );
+                    registrar_mensagem_enviada( primeira_vez, web_id, hora, mensagem_a_enviar );
                 }
             }         
         }
 
 ///////////////////////////////////////////////////////////////////////////////////////////////////////////   
 ///////////////////////////////////////////////////////////////////////////////////////////////////////////   endereco_imagem_user_logado     
-        function registrar_mensagem_enviada( web_id, hora, mensagem_a_enviar ){
+        function registrar_mensagem_enviada( primeira_vez, web_id, hora, mensagem_a_enviar ){
             try{
 setTimeout(function(){                 
                 //endereco_imagem_user_logado
@@ -108,8 +108,14 @@ setTimeout(function(){
 "        <!-- CONVERSA ENVIADA - FIM -->";
 
                 setTimeout(function(){ 
-                    var anterior = document.getElementById( "div_todas_as_conversas" + web_id ).innerHTML;
-                    document.getElementById( "div_todas_as_conversas" + web_id ).innerHTML = msg + anterior;
+                    if( primeira_vez === false ){
+                        var anterior = document.getElementById( "div_todas_as_conversas" + web_id ).innerHTML;
+                        document.getElementById( "div_todas_as_conversas" + web_id ).innerHTML = msg + anterior;
+                    }
+                    else{
+                        
+                        $( '#div_todas_as_conversas'  + web_id ).append( msg ); 
+                    }
                 }, 0);                
                 
 }, 0);                

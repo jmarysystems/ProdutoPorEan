@@ -16,6 +16,10 @@
                     alert("Escreva algo para poder ser enviado!\n");
                 }
                 else{
+                    
+                    setTimeout(function(){
+                        voltar_para_todas_as_mensagem( web_id );
+                    }, 0);
                 
                     setTimeout(function(){ 
                         var now = new Date();
@@ -75,9 +79,8 @@
                         
                         document.getElementById( "mensagem_a_enviar" + web_id ).value = "";  
                         //Não registra a mensagem por que ela vai ser lida e gravada pelo
-                        registrar_mensagem_enviada( web_id, id, mensagem_a_enviar );
-                        voltar_para_todas_as_mensagem( web_id );
-                    
+                        registrar_mensagem_enviada( false, web_id, id, mensagem_a_enviar );
+                                            
                     }, 0);
                                         
                 }

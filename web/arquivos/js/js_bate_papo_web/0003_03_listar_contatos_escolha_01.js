@@ -4,6 +4,7 @@
  */
 
 function escolha_01(
+            primeira_vez,
         _00_web_usuario_logado_email_remetente_str,
             _00_local_usuario_logado_email_str,
                 _11_local_contato_desta_tabela_email_str,
@@ -23,7 +24,7 @@ setTimeout(function(){
                                         //Se o destinatário for igual ao contato local aberto então:
                                         if( verificar_igualdade_sem_espaco_no_final( _11_local_contato_desta_tabela_email_str, _11_web_usuario_logado_email_destinatario_str ) === true ){
                                             
-                                            registrar_mensagem_a__direita( jm_id_msg, web_id, web_hora_str, nova_mensagem );
+                                            registrar_mensagem_a__direita( primeira_vez, jm_id_msg, web_id, web_hora_str, nova_mensagem );
                                         }
                                     } 
                                     //Se o remetente for igual ao usuário logado então:
@@ -33,7 +34,7 @@ setTimeout(function(){
                                         if( verificar_igualdade_sem_espaco_no_final( _11_web_usuario_logado_email_destinatario_str, _00_local_usuario_logado_email_str ) === true ){
                                     
                                             //document.getElementById("usuario_logado_imagem").value;                                            
-                                            registrar_mensagem_enviada_esquerda( nome_principal, web_id, web_hora_str, nova_mensagem );
+                                            registrar_mensagem_enviada_esquerda( primeira_vez, nome_principal, web_id, web_hora_str, nova_mensagem );
                                         }
                                     }
                                     

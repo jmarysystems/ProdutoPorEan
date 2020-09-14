@@ -6,7 +6,7 @@
 /////////////////////////////////////////////////////////////////////////////////////////////////////////// 
 //////ESCREVER E ENVIAR MENSAGENS - INÍCIO   
 /////////////////////////////////////////////////////////////////////////////////////////////////////////// 
-        function percorrer_todas_as_conversas( web_id, web_contato_email_str, nome_principal ){
+        function percorrer_todas_as_conversas( primeira_vez, web_id, web_contato_email_str, nome_principal ){
             try{    
                 
 setTimeout(function(){                 
@@ -14,7 +14,7 @@ setTimeout(function(){
                         
                         var linha_recebida = document.getElementById("tabela_conversas").value.split("@"); 
                         //alert( "\nlinha_recebida:\n" + linha_recebida );
-                        for( var i = 0; i < linha_recebida.length; i++ ) {
+                        for( var i = 0; i < linha_recebida.length; i++ ) {   
                             
                             //alert( i + " - " + linha_recebida[i] );
 ////////////////////////////////////////////////////////////////////////////
@@ -78,6 +78,7 @@ setTimeout(function(){
                                     var nova_mensagem = web_mensagem_str.trim().replace("\n", "<br>");
                                     
                                     escolha_01(
+                                            primeira_vez,
                                         _00_web_usuario_logado_email_remetente_str, 
                                             _00_local_usuario_logado_email_str,
                                                 _11_local_contato_desta_tabela_email_str,

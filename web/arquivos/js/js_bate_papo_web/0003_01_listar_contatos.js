@@ -27,8 +27,15 @@
                 var countXX22 = 1;
                 
                 var count_x = 1;
-                
-                _02_controle_baixar_tabela_listar_contato( count_x, email_do_usuario_logado, countXX22 );
+                                                
+                if( document.getElementById("tabela_contatos").value === "null" ){
+                                                        
+                    _02_controle_baixar_tabela_listar_contato( count_x, email_do_usuario_logado, countXX22 );
+                }
+                else{
+                    
+                    _03_controle_verificar_se_tem_mensagem_listar_contato( count_x, email_do_usuario_logado, countXX22 );
+                }
             
             }catch(Exception){
                 
@@ -57,10 +64,7 @@
         function _02_controle_baixar_tabela_listar_contato( count_x, email_do_usuario_logado, countXX22){
             
             try{
-                
-                var id_planilha = "10xscEU1L66fCBmVypEVn8h6b3Ku2eRZMVzbHIVzS6Ns";
-                var urlxx = "https://sheets.googleapis.com/v4/spreadsheets/"+ id_planilha +"/values/A:B?key=AIzaSyBwiMCywJRFQHuuksWdhqwjOrR5mDaWJYs";
-      
+                                      
 ////////////////////////////////////////////////////////////////////////////
                 setTimeout(function(){ 
                 /* Some tasks */ 
@@ -81,8 +85,7 @@
                 }, 0);
 ////////////////////////////////////////////////////////////////////////////
 
-                var url = urlxx;
-                jQuery.getJSON(url).success(function(data) {
+                jQuery.getJSON( url_planilha_tabela_contatos ).success(function(data) {
                     //console.log(data); 
                     //alert( JSON.stringify(data) );
                     document.getElementById("tabela_contatos").value = JSON.stringify(data);

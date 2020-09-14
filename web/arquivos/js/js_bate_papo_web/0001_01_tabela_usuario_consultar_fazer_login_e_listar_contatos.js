@@ -17,7 +17,14 @@
                 
                 var count_x = 1;
                 
-                _02_controle_baixar_tabela_login( count_x, usuario_digitado, senha_digitada, conteudo_div );
+                if( document.getElementById("tabela_usuarios").value === "null" ){
+                                                        
+                    _02_controle_baixar_tabela_login( count_x, usuario_digitado, senha_digitada, conteudo_div );   
+                }
+                else{
+                    
+                    _03_controle_verificar_se_tem_mensagem_login( count_x, usuario_digitado, senha_digitada, conteudo_div );
+                }
             }
         }
         
@@ -39,9 +46,7 @@
         function _02_controle_baixar_tabela_login( count_x, usuario_digitado, senha_digitada, conteudo_div ){
             
             try{
-                var id_planilha = "1UHCZa_LGpJ1pnY4HI0DhuuaBpjtmpp_Hpih-q1BiFVk";
-                var urlxx = "https://sheets.googleapis.com/v4/spreadsheets/"+ id_planilha + "/values/A:B?key=AIzaSyBwiMCywJRFQHuuksWdhqwjOrR5mDaWJYs";
-                
+                                                
                 ////////////////////////////////////////////////////////////////////////////
                 setTimeout(function(){ 
                     /* Some tasks */ 
@@ -51,8 +56,7 @@
                 }, 0);
                 ////////////////////////////////////////////////////////////////////////////
 
-                var url = urlxx;
-                jQuery.getJSON(url).success(function(data) {
+                jQuery.getJSON( url_planilha_tabela_usuarios ).success(function(data) {
                     //console.log(data); 
                     //alert( JSON.stringify(data) );
                     document.getElementById("tabela_usuarios").value = JSON.stringify(data);
@@ -157,41 +161,19 @@
                             */
                            
                             if( pass_ok === 0 ){ 
-                                //document.getElementById("resposta").innerHTML = "<div>Login OK</div>";
-                                //setTimeout(function(){
                                     try{
-                                        var count_yy = 1;
-                                        _02_controle_baixar_tabela_baixar_imagem( count_yy, id, usuario_digitado, nome_digitado );
-                                        //var imagem_src_data_web22 = baixar_imagem( id );    
-                                        //document.getElementById("resposta").innerHTML = imagem_src_data_web22;
-/*                                        var imagem_src_data22 = converter_base64( imagem_src_data_web22 );
-                                        if ( imagem_src_data22 === undefined || imagem_src_data22 === "" || imagem_src_data22 === null){
-                                            
-                                            imagem_src_data22 = "../arquivos/imagens/003_login/cont.png";
+   
+                                        var count_yy = 1;                
+                                        if( document.getElementById("tabela_imagens_dos_contatos").value === "null" ){
+                                                        
+                                            _02_controle_baixar_tabela_baixar_imagem( count_yy, id, usuario_digitado, nome_digitado );
                                         }
-                                        
-                                        endereco_imagem_user_logado = imagem_src_data22;
-                                        document.getElementById("usuario_logado_imagem").value = imagem_src_data22;
-                                        
-                                        document.getElementById("img_conversa_user_logado").src = imagem_src_data22;
-*/
+                                        else{
+                    
+                                            _03_controle_verificar_se_tem_mensagem_baixar_imagem( count_yy, id, usuario_digitado, nome_digitado );
+                                        }
+
                                     }catch(Exception){}
-                                //}, 500);
-/*                                
-                                document.getElementById("resposta").style.display = 'none'; 
-                                document.getElementById("div_meus_contatos").style.display = 'block';  
-                                
-                                //LOGIN EFETUADO COM SUCESSO 
-                                document.getElementById("usuario_logado").value = usuario_digitado;
-                                var nome_digitado_da_linha = importar_Para_Alfabeto_JM(nome_digitado).trim().toUpperCase();
-                                document.getElementById("cara_palida").innerHTML = "-)-> " + nome_digitado_da_linha + " <-(-";
-                                //document.getElementById("cara_palida").innerHTML = "-)-> " + "Cara Pálida Web" + " <-(-";
-                                document.getElementById("usuario_logado_id_nome").value = nome_digitado_da_linha;
-                                
-                                //LISTAR CONTATOS DO USUÁRIO LOGADO 
-                                listar_contatos( document.getElementById("usuario_logado").value );
-                                
-                                document.getElementById("usuario_logado_id").value = id;      */
                             }
                             else{
                                 
@@ -252,9 +234,7 @@
         function _02_controle_baixar_tabela_baixar_imagem( count_x, web_id_da_tb_usuario, usuario_digitado, nome_digitado ){
             
             try{
-                var id_planilha = "1xCq2u_Mt9R-lDi0JeaOyTDgrSHvHphh0LD-aIySRv9Q";
-                var urlxx = "https://sheets.googleapis.com/v4/spreadsheets/"+ id_planilha +"/values/A:B?key=AIzaSyBwiMCywJRFQHuuksWdhqwjOrR5mDaWJYs";
-                
+
                 ////////////////////////////////////////////////////////////////////////////
                 setTimeout(function(){ 
                     /* Some tasks */ 
@@ -264,8 +244,7 @@
                 }, 0);
                 ////////////////////////////////////////////////////////////////////////////
 
-                var url = urlxx;
-                jQuery.getJSON(url).success(function(data) {
+                jQuery.getJSON( url_planilha_tabela_imagens_dos_contatos ).success(function(data) {
                     //console.log(data); 
                     //alert( JSON.stringify(data) );
                     document.getElementById("tabela_imagens_dos_contatos").value = JSON.stringify(data);
