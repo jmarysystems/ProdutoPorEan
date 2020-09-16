@@ -39,7 +39,7 @@
                        var jm_comando = exportar_Para_Alfabeto_JM_Sem_Arroba( comando.trim() );
                        //var jm_remetente = exportar_Para_Alfabeto_JM_Sem_Arroba( document.getElementById("usuario_logado").value.trim() );
                         //var jm_destinatario = exportar_Para_Alfabeto_JM_Sem_Arroba( email_do_contato_atual_selecionado.trim() );
-                        var jm_remetente = exportar_Para_Alfabeto_JM_Sem_Arroba( "teste" );
+                        var jm_remetente = exportar_Para_Alfabeto_JM_Sem_Arroba( "-" );
                         var jm_destinatario = exportar_Para_Alfabeto_JM_Sem_Arroba( "teste" );
                         var jm_ean = exportar_Para_Alfabeto_JM_Sem_Arroba( ean );
                         var jm_qtd = exportar_Para_Alfabeto_JM_Sem_Arroba( qtd );
@@ -54,7 +54,8 @@
                         //////////////////////////////////////////
                 
                         var GET_URL = "https://docs.google.com/forms/d/e/" + id_formulario_id + "/formResponse" +
-                            "?entry." + id_txt + "=" + id_txt2 + "&entry." + id_rem + "=" + "teste" + "&entry." + id_data + "=" + id_data + "&entry." + id_qtd + "=" + qtd + "&entry." + id_ean + "=" + ean;
+                            "?entry." + id_txt + "=" + id_txt2 + "&entry." + id_rem + "=" + "teste" + "&entry." + 
+                            id_data + "=" + data + "&entry." + id_qtd + "=" + qtd + "&entry." + id_ean + "=" + ean;
                     
                         try{
                            

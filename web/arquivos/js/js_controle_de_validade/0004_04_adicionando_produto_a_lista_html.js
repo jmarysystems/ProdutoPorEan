@@ -3,7 +3,7 @@
  * and open the template in the editor.
  */
 
-function adicionando_produto_ao_html( ean, des, cat, umb,  qtd, data, end_img ) {
+function adicionando_produto_a_lista_html( ean, des, cat, umb,  qtd, data, end_img ) {
     
 setTimeout(function(){
 try{
@@ -182,7 +182,7 @@ try{
 "<!-- FIM DOS DADOS DO PRODUTO - id=\"ean\" +++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++ --> ";
             
             
-            $('#lista_de_produtos_controle_jmary_systems').append( html );      
+            $('#lista_de_produtos_controle_de_vencimento').append( html );      
 
 }catch(Exception){}     
 }, 0);    

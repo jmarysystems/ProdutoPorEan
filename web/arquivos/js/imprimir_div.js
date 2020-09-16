@@ -4,6 +4,10 @@
  */
 
 function printDiv(divID) {
+    
+    window.print();
+    
+   /*
    var body = document.body.innerHTML;
    var conteudo = document.getElementById(divID).innerHTML;
    
@@ -12,6 +16,7 @@ function printDiv(divID) {
    window.print();
    
    document.body.innerHTML = body;
+   */
 }
 
 
