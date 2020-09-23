@@ -140,7 +140,7 @@ try{
                                                                          "<tr>" +
 "                                                                                        " +
 "                                                                            <td align='center' style=\"padding: 0; margin: 0; color:#000; font-family:  Arial, Helvetica, sans-serif; font-size: 120%; padding-left: 0px; float: left; \" >" +
-                                                                                 "Quantidade <br> Em Unidade:" +
+                                                                                 "Quantidade <br> Unidade/Kg:" +
 "                                                                            </td>  " +
 "                                                                        </tr>" +
  

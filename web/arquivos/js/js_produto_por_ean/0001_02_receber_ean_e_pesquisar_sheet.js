@@ -37,28 +37,28 @@ setTimeout(function(){
                     
                     try{
                         var img = new Image();
-	                img.src = "../Imagens/" + ean_p.trim() + ".gif";
+	                img.src = "../../Imagens/" + ean_p.trim() + ".gif";
                         img.onload = function() {
                             
-                            adicionar_linha_local( ean_p.trim(), des, cat, umb, "../Imagens/" + ean_p.trim() + ".gif" );
+                            adicionar_linha_local( ean_p.trim(), des, cat, umb, "../../Imagens/" + ean_p.trim() + ".gif" );
 	                }
 	                img.onerror = function() {
                             
-                            img.src = "../Imagens/" + ean_p.trim() + ".png";
+                            img.src = "../../Imagens/" + ean_p.trim() + ".png";
                             img.onload = function() {
                                 
-                                adicionar_linha_local( ean_p.trim(), des, cat, umb, "../Imagens/" + ean_p.trim() + ".png" );
+                                adicionar_linha_local( ean_p.trim(), des, cat, umb, "../../Imagens/" + ean_p.trim() + ".png" );
                             }
                             img.onerror = function() {
                                 
-                                img.src = "../Imagens/" + ean_p.trim() + ".jpg";
+                                img.src = "../../Imagens/" + ean_p.trim() + ".jpg";
                                 img.onload = function() {
                                     
-                                    adicionar_linha_local( ean_p.trim(), des, cat, umb, "../Imagens/" + ean_p.trim() + ".jpg" );
+                                    adicionar_linha_local( ean_p.trim(), des, cat, umb, "../../Imagens/" + ean_p.trim() + ".jpg" );
                                 }
                                 img.onerror = function() {
                                     
-                                    adicionar_linha_local( ean_p.trim(), des, cat, umb, "../Imagens/" + "sem_imagem2" + ".gif" );
+                                    adicionar_linha_local( ean_p.trim(), des, cat, umb, "../../Imagens/" + "sem_imagem2" + ".gif" );
                                 }
                             }
                         }
@@ -75,28 +75,28 @@ setTimeout(function(){
             
             try{
                         var img = new Image();
-	                img.src = "../Imagens/" + ean_p.trim() + ".gif";
+	                img.src = "../../Imagens/" + ean_p.trim() + ".gif";
                         img.onload = function() {
                             
-                            adicionar_linha_local( ean_p.trim(), "Produto não Registrado!", "--------------", "----", "../Imagens/" + ean_p.trim() + ".gif" );
+                            adicionar_linha_local( ean_p.trim(), "Produto não Registrado!", "--------------", "----", "../../Imagens/" + ean_p.trim() + ".gif" );
 	                }
 	                img.onerror = function() {
                             
-                            img.src = "../Imagens/" + ean_p.trim() + ".png";
+                            img.src = "../../Imagens/" + ean_p.trim() + ".png";
                             img.onload = function() {
                                 
-                                adicionar_linha_local( ean_p.trim(), "Produto não Registrado!", "--------------", "----", "../Imagens/" + ean_p.trim() + ".png" );
+                                adicionar_linha_local( ean_p.trim(), "Produto não Registrado!", "--------------", "----", "../../Imagens/" + ean_p.trim() + ".png" );
                             }
                             img.onerror = function() {
                                 
-                                img.src = "../Imagens/" + ean_p.trim() + ".jpg";
+                                img.src = "../../Imagens/" + ean_p.trim() + ".jpg";
                                 img.onload = function() {
                                     
-                                    adicionar_linha_local( ean_p.trim(), "Produto não Registrado!", "--------------", "----", "../Imagens/" + ean_p.trim() + ".jpg" );
+                                    adicionar_linha_local( ean_p.trim(), "Produto não Registrado!", "--------------", "----", "../../Imagens/" + ean_p.trim() + ".jpg" );
                                 }
                                 img.onerror = function() {
                                     
-                                    adicionar_linha_local( ean_p.trim(), "Produto não Registrado!", "--------------", "----", "../Imagens/" + "sem_imagem" + ".gif" );
+                                    adicionar_linha_local( ean_p.trim(), "Produto não Registrado!", "--------------", "----", "../../Imagens/" + "sem_imagem" + ".gif" );
                                 }
                             }
                         }

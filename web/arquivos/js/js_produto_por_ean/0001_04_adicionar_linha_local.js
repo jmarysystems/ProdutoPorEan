@@ -17,10 +17,20 @@ try{
 "                                    <td align=\"center\">" +
 "                                        <ul style=\"list-style:none; padding: 0px; margin: 0px; width:100%;\" >" +
 "                                            " +
-"<!-- id=\"nome_do_produto_consultado\" +++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++ -->                                             " +
+
+"                                            <li style=\" padding: 0; margin: 0; \">" +
+"                                                " + "<hr style=\" background-color: #000; padding-bottom: 1; margin-bottom: 0;  \">" +
+"                                            </li>" +
+
+"<!-- id=\"nome_do_produto_consultado\" +++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++ #3A3A3A -->                                             " +
 "                                            <li " + "id=nome_" + ean + " style=\"width:100%; background-color: #3A3A3A; color:#fff; font-family:  Arial, Helvetica, sans-serif; font-size: 120%;\">" +
 "                                                " + des + 
 "                                            </li>" +
+
+"                                            <li style=\" padding: 0; margin: 0; \">" +
+"                                                " + "<hr style=\" background-color: #000; padding-top: 1; margin-top: 0;  padding-bottom: 0; margin-bottom: 0;  \">" +
+"                                            </li>" +
+
 "                                            " +
 "                                            <li style=\"\">" +
 "                                                <table border=\"0\" cellpadding=\"0\" cellspacing=\"0\" style=\"padding: 0; margin: 0;\">" +
@@ -45,7 +55,7 @@ try{
 "                                                                            </td> " +
 "                                                                            " +
 "<!-- id=\"ean_do_produto_consultado\" +++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++ -->                                                                                         " +
-"                                                                            <td " + "id=ean_" + ean + " style=\"margin-top: 5px; background-color: #3A3A3A; color:#fff; font-family:  Arial, Helvetica, sans-serif; font-size: 120%; padding-left: 5px; float: left;\" >" +
+"                                                                            <td " + "id=ean_" + ean + " bgcolor='#3A3A3A' style=\"margin-top: 5px; background-color: #3A3A3A; color:#fff; font-family:  Arial, Helvetica, sans-serif; font-size: 120%; padding-left: 5px; float: left;\" >" +
 "                                                                                            " + ean +
 "                                                                            </td>" +
 "                                                                        </tr>" +

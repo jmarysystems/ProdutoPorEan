@@ -24,10 +24,20 @@ try{
 "                                    <td align=\"center\">" +
 "                                        <ul style=\"list-style:none; padding: 0px; margin: 0px; width:100%;\" >" +
 "                                            " +
-"<!-- id=\"nome_do_produto_consultado\" +++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++ -->                                             " +
+
+"                                            <li style=\" padding: 0; margin: 0; \">" +
+"                                                " + "<hr style=\" background-color: #000; padding-bottom: 1; margin-bottom: 0;  \">" +
+"                                            </li>" +
+
+"<!-- id=\"nome_do_produto_consultado\" +++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++ #3A3A3A -->                                             " +
 "                                            <li " + "id=nome_" + ean + " style=\"width:100%; background-color: #3A3A3A; color:#fff; font-family:  Arial, Helvetica, sans-serif; font-size: 120%;\">" +
 "                                                " + des + 
 "                                            </li>" +
+
+"                                            <li style=\" padding: 0; margin: 0; \">" +
+"                                                " + "<hr style=\" background-color: #000; padding-top: 1; margin-top: 0;  padding-bottom: 0; margin-bottom: 0;  \">" +
+"                                            </li>" +
+
 "                                            " +
 "                                            <li style=\"\">" +
 "                                                <table border=\"0\" cellpadding=\"0\" cellspacing=\"0\" style=\"padding: 0; margin: 0;\">" +
@@ -140,7 +150,7 @@ try{
                                                                          "<tr>" +
 "                                                                                        " +
 "                                                                            <td align='center' style=\"padding: 0; margin: 0; color:#000; font-family:  Arial, Helvetica, sans-serif; font-size: 120%; padding-left: 0px; float: left; \" >" +
-                                                                                 "Quantidade <br> Em Unidade:" +
+                                                                                 "Quantidade <br> Unidade/Kg:" +
 "                                                                            </td>  " +
 "                                                                        </tr>" +
  
@@ -171,10 +181,115 @@ try{
 "<!-- BOTAO NOVA LINHA +++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++ -->" +
 "                                <tr>" +
 "                                    <td align=\"center\">" +
-"                                        <img src=\""+ "../arquivos/imagens/003_login/adicionar.png" + "\" title=" + "Adicionar" + " onclick=\"enviando_produto_proximo_do_vencimento('" + ean + "','" + qtd + "','" + data + "');\" width=\"100\" height=\"40\" style=\"cursor: pointer\" > " +
+"                                        <img src=\""+ "../arquivos/imagens/003_login/adicionado_por.jpg" + "\" title=" + "Adicionar" + " onclick=\"enviando_produto_proximo_do_vencimento('" + ean + "','" + qtd + "','" + data + "');\" width=\"220\" height=\"41\" style=\"cursor: pointer; padding-top: 5; padding-bottom: 5;\" > " +
 "                                    </td>" +
 "                                </tr>" +
 "<!-- BOTAO NOVA LINHA +++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++ -->" +
+
+
+
+
+
+
+
+
+"<!-- NOVA LINHA +++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++ -->" +
+"                                <tr>" +
+"                                    <td align=\"center\">" +
+"                                        <ul style=\"list-style:none; padding: 0px; margin: 0px; width:100%;\" >" +
+"                                            " +
+"                                            <li style=\"\">" +
+"                                                <table border=\"0\" cellpadding=\"0\" cellspacing=\"0\" style=\"padding: 0; margin: 0;\">" +
+"                                                    <tr>" +
+"                                                        <td>                                                                                                                    " +
+"                                                            <ul style=\"list-style:none; padding: 0px; margin: 0px; width:100%;\" >" +
+"                                                                " +
+
+"                                                                <li style=\"float: left;\"> " +
+"                                                                    " +
+"                                                                    <table border=\"1\" cellpadding=\"0\" cellspacing=\"0\" style=\"padding: 0; margin: 0;\">" +
+                    
+                                                                         "<tr>" +
+"                                                                                        " +
+"                                                                            <td align='center' style=\"padding: 0; margin: 0; color:#000; font-family:  Arial, Helvetica, sans-serif; font-size: 120%; padding-left: 0px; float: left; \" >" +
+                                                                                 "Nome:" +
+"                                                                            </td>  " +
+"                                                                        </tr>" +
+ 
+"<!-- Nome +++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++ -->  " +
+                                                                         "<tr>" +
+"                                                                            <td align='center' " + " style=\"padding: 0; margin: 0; width:100%; background-color: #3A3A3A; color:#fff; font-family:  Arial, Helvetica, sans-serif; font-size: 120%; \" >" +
+"                                                                                            " + "-" + 
+"                                                                            </td>" +
+"                                                                        </tr>" +
+                    
+"                                                                        " +
+"                                                                    </table> " +
+"                                                                    " +
+                    
+"                                                                </li>" +
+
+"                                                                <li style=\"float: left; padding-left: 5px; \"> " +
+"                                                                    " +
+"                                                                    <table border=\"1\" cellpadding=\"0\" cellspacing=\"0\" style=\"padding: 0; margin: 0;\">" +
+                    
+                                                                         "<tr>" +
+"                                                                                        " +
+"                                                                            <td align='center' style=\"padding: 0; margin: 0; color:#000; font-family:  Arial, Helvetica, sans-serif; font-size: 120%; padding-left: 0px; float: left; \" >" +
+                                                                                 "Empresa:" +
+"                                                                            </td>  " +
+"                                                                        </tr>" +
+ 
+"<!-- Empresa +++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++ -->  " +
+                                                                         "<tr>" +
+"                                                                            <td align='center' " + " style=\"padding: 0; margin: 0; width:100%; background-color: #3A3A3A; color:#fff; font-family:  Arial, Helvetica, sans-serif; font-size: 120%; \" >" +
+"                                                                                            " + "-" + 
+"                                                                            </td>" +
+"                                                                        </tr>" +
+                    
+"                                                                        " +
+"                                                                    </table> " +
+"                                                                    " +
+                    
+"                                                                </li>" +
+
+"                                                                <li style=\"float: left; padding-left: 5px; \"> " +
+"                                                                    " +
+"                                                                    <table border=\"1\" cellpadding=\"0\" cellspacing=\"0\" style=\"padding: 0; margin: 0;\">" +
+                    
+                                                                         "<tr>" +
+"                                                                                        " +
+"                                                                            <td align='center' style=\"padding: 0; margin: 0; color:#000; font-family:  Arial, Helvetica, sans-serif; font-size: 120%; padding-left: 0px; float: left; \" >" +
+                                                                                 "Cargo/Função:" +
+"                                                                            </td>  " +
+"                                                                        </tr>" +
+ 
+"<!-- Cargo/Função +++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++ -->  " +
+                                                                         "<tr>" +
+"                                                                            <td align='center' " + " style=\"padding: 0; margin: 0; width:100%; background-color: #3A3A3A; color:#fff; font-family:  Arial, Helvetica, sans-serif; font-size: 120%; \" >" +
+"                                                                                            " + "-" + 
+"                                                                            </td>" +
+"                                                                        </tr>" +
+                    
+"                                                                        " +
+"                                                                    </table> " +
+"                                                                    " +
+                    
+"                                                                </li>" +
+
+"                                                            </ul>" +
+"                                                        </td>" +
+"                                                    </tr>" +
+"                                                </table>     " +
+"                                            </li>                                            " +
+"                                        </ul>                                                                         " +
+"                                    </td>" +
+"                                </tr>" +
+"<!-- NOVA LINHA +++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++ -->" +
+
+
+
+
 
 
 "                            </table> " +
