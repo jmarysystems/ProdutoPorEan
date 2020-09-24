@@ -16,7 +16,7 @@ setTimeout(function(){
         
         var achou = false;
         
-        var linha = dados_dos_produtos.trim().split( '@' );
+        var linha = tabela_de_dados_dos_produtos.trim().split( '@' );
         for( var j = 0; j < linha.length; j++ ) {
 
             if( linha[j].includes("&") ){
