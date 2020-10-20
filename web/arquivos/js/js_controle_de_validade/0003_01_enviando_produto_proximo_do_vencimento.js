@@ -80,7 +80,7 @@
                             "?entry." + id_txt + "=" + id_txt2 + 
                             "&entry." + id_ESTABELECIMENTO + "=" + estabelecimento_selected + 
                             "&entry." + id_REMETENTE + "=" + usuario_logado_nome + 
-                            "&entry." + id_DATA_DE_VENCIMENTO + "=" + 'data' + 
+                            //"&entry." + id_DATA_DE_VENCIMENTO + "=" + data + 
                             "&entry." + id_QUANTIDADE + "=" + qtd + 
                             "&entry." + id_EAN + "=" + ean + 
                             "&entry." + id_MATERIAL + "=" + material_rec + 
