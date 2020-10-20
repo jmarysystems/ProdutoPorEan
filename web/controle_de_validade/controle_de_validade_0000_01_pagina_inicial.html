@@ -1,0 +1,535 @@
+<html>
+    
+    <head>
+        
+        <title></title>
+        <meta charset="UTF-8">  
+        
+        <!-- <meta http-equiv="refresh" content=1;url="www.jmarysystems.com.br">     -->   
+        
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">    
+        
+        <script type="text/javascript" src='../arquivos/js/js_bate_papo_web/0000_01_dados_gerais.js'></script>
+
+        <script type="text/javascript" src='../arquivos/js/js_index/_01_01_baixando_planilhas_google.js'></script>
+        <script type="text/javascript" src='../arquivos/js/js_index/_01_02_listar_na_tabela_html_a_planilha_principal.js'></script> 
+        <script type="text/javascript" src='../arquivos/js/js_index/_01_03_percorrer_tabela_html_fazer_alteracoes_e_exclusoes.js'></script>
+        <script type="text/javascript" src='../arquivos/js/js_index/_01_04_tabela_html_configuracoes_adicionar_eventos_a_todas_as_linhas.js'></script>
+        <script type="text/javascript" src='../arquivos/js/js_index/_02_01_index_tabela_html_login.js'></script>
+                
+        
+        
+        <script type="text/javascript" src='../arquivos/js/js_index/_0000_01_controle_de_telas.js'></script>
+        
+        <script type="text/javascript" src='../arquivos/js/js_index/_0001_01_index_tabela_usuario_login.js'></script>               
+        <script type="text/javascript" src='../arquivos/js/js_index/_0002_01_index_X_tabela_usuario_X_criar_novo_usuario.js'></script>
+        <script type="text/javascript" src='../arquivos/js/js_index/_0003_01_index_X_tabela_usuario_X_alterar_exluir_usuario.js'></script>
+        <script type="text/javascript" src='../arquivos/js/js_index/_0003_02_index_X_tabela_usuario_X_exluir_usuario.js'></script>
+        <script type="text/javascript" src='../arquivos/js/js_index/_0003_03_index_X_tabela_usuario_X_alterar_usuario.js'></script>        
+        
+        
+        <script type="text/javascript" src='../arquivos/js/js_bate_papo_web/0001_01_tabela_usuario_consultar_fazer_login_e_listar_contatos.js'></script>
+        <script type="text/javascript" src='../arquivos/js/js_bate_papo_web/0001_02_tabela_usuario_cadastrar_consultar_usuario_antes_de_cadastrar.js'></script>
+        <script type="text/javascript" src='../arquivos/js/js_bate_papo_web/0001_03_tabela_usuario_alterar.js'></script>
+        <script type="text/javascript" src='../arquivos/js/js_bate_papo_web/0001_04_tabela_usuario_excluir.js'></script>
+        <script type="text/javascript" src='../arquivos/js/js_bate_papo_web/0002_01_tabela_contato_consultar_e_cadastrar.js'></script>
+        <script type="text/javascript" src='../arquivos/js/js_bate_papo_web/0002_02_tabela_contato_cadastrar_e_listar_contatos.js'></script>
+        <script type="text/javascript" src='../arquivos/js/js_bate_papo_web/0002_03_tabela_contato_alterar.js'></script>
+        <script type="text/javascript" src='../arquivos/js/js_bate_papo_web/0002_04_tabela_contato_excluir.js'></script>
+        <script type="text/javascript" src='../arquivos/js/js_bate_papo_web/0003_01_listar_contatos.js'></script>
+        <script type="text/javascript" src='../arquivos/js/js_bate_papo_web/0003_02_listar_contatos_verificar_se_o_contato_tem_imagem.js'></script>
+        <script type="text/javascript" src='../arquivos/js/js_bate_papo_web/0003_03_listar_contatos_exibir_imagens_dos_contatos.js'></script>
+        <script type="text/javascript" src='../arquivos/js/js_bate_papo_web/0003_04_registrar_mensagem_direita.js'></script>
+        <script type="text/javascript" src='../arquivos/js/js_bate_papo_web/0003_05_registrar_mensagem_esquerda.js'></script>
+        <script type="text/javascript" src='../arquivos/js/js_bate_papo_web/0004_01_enviar_mensagem.js'></script>
+        <script type="text/javascript" src='../arquivos/js/js_bate_papo_web/0003_03_listar_contatos_escolha_01.js'></script>
+        <script type="text/javascript" src='../arquivos/js/js_bate_papo_web/0003_03_listar_contatos_percorer_todos.js'></script>
+        
+        <script type="text/javascript" src='../arquivos/js/js_bate_papo_web/9999_1_utilitario_baixar_imagem.js'></script>
+        
+        <script type="text/javascript" src='../arquivos/js/imprimir_div.js'></script>
+        
+        <script type="text/javascript" src='../arquivos/js/jquery.js'></script>
+        
+        <script type="text/javascript" src='../arquivos/js/js_quagga/quagga.min.js'></script>
+        
+        
+        <!-- <script type="text/javascript" src='../arquivos/js/js_bate_papo_web/js_login_001.js'></script> --> 
+       
+        <style>
+            
+            .per { box-shadow: 0px 0px 10px #222; }
+            .per:hover { box-shadow: 10px 10px 10px #422; }
+            
+#tabela{
+    width:100%;
+    border:solid 1px;
+    text-align:left;
+    border-collapse:collapse;
+    
+    box-shadow: 0 5px 30px darkgrey;
+    border-spacing: 0;
+}
+
+/**Cores**/
+#tabela tr:nth-child(odd){
+  background-color: #eee;
+}
+
+/**Cor quando passar por cima**/
+#tabela tr:hover td{
+  background-color: #feffb7;
+}
+
+/**Cor quando selecionado**/
+#tabela tr.selecionado td{
+  background-color: #aff7ff;
+}
+ 
+#tabela tbody tr{
+    border:solid 1px;
+    height:30px;
+    cursor:pointer; /**importante para não mostrar cursor de texto**/
+}
+
+#tabela tbody tr td{
+    border:solid 1px;
+}
+ 
+#tabela thead{
+    background:beige;
+}
+ 
+#tabela thead th:nth-child(1){
+    width:100px;
+}
+ 
+#tabela input{
+    color:navy;
+    width:100%;
+}
+
+
+        </style>
+    </head>
+    
+    <body 
+        style="background-color: #D3D3D3; width: 100%; height: 100%; padding: 0; margin: 0;
+               font-family: Arial, Helvetica, sans-serif; font-size: 14px; color: black; line-height: 1.5;" > 
+        
+        <!-- <source src="../arquivos/sons/whatsapp001.mp3" type="audio/mpeg"> --> 
+        <!-- <source src="../arquivos/sons/iphone_sms.mp3" type="audio/mpeg"> --> 
+        <audio id="audio" controls style="display: none; padding: 0; margin: 0;"> 
+            
+            <source src="../arquivos/sons/minions.mp3" type="audio/mpeg">
+        </audio>
+        
+<!-- input(S) ################################################################# -->         
+        <input type="hidden" id="usuario_logado_id_nome" value="null">
+<!-- input(S) ################################################################# -->   
+
+
+
+
+
+
+
+<!-- +++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++ 
+-0
+-1
+-2
+- #### MENU INÍCIO #### --> 
+<!-- 
+-0
+-1
+-2    
++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++-->   
+<div id="topo_menu_xx" style="background-color: #3A3A3A; 
+            width:            100%; 
+            height:           50px; 
+            padding:          0; 
+            margin:           0;    
+            z-index:200;
+            position: relative;
+            " >
+    
+<ul style="list-style:none; padding: 0px; margin: 0px; height: 100%; z-index:199;">
+   
+    
+    
+<!-- 
+-0
+-1
+-2
+ --> 
+<!--- #### COLUNA 1 INÍCIO #### --> 
+<!-- 
+-0
+-1
+-2    
+-->
+    <li 
+        style="
+            height: 100%; float:    left;    position: relative; 
+            width:  100%; overflow: visible;"
+        
+        onMouseover="
+            this.style.backgroundColor='#23871C'; 
+            this.style.color='#3A3A3A';  
+            document.getElementById('coluna11tb').style.display = 'block'; "
+            
+        onMouseout="
+            this.style.backgroundColor='#3A3A3A';                               
+            document.getElementById('coluna11tb').style.display = 'none';  "
+    >
+        
+        <a 
+            id="cara_palida"
+            style="
+                float:           left;
+                color:           #fff; font-family:  Arial, Helvetica, sans-serif; 
+                font-size:       19px; padding-left: 10px; 
+                padding-right:   10px; line-height:  50px; 
+                text-decoration: none;"
+           
+            onMouseover=" this.style.color='black'; "
+            onMouseout="  this.style.color='#fff'; "       
+        > 
+            -)-> JMarySystems <-(- </a>  
+        
+        <table border="0" cellpadding="0" cellspacing="0" style="float: right; width: 40px; height: 50px; padding: 0px; margin: 0px;">
+            <tr>
+                <td align="center" style="padding-right: 2px;"> 
+                    
+                    <img id="cara_palida_img" src="arquivos/imagens/003_login/cont.png" 
+                        style="cursor: pointer; width: 40px; height: 45px; padding: 0px; margin: 0px; display: none"                        
+                        title="Usuário"
+                        
+                        onclick=""
+                    >  
+                    
+                </td>    
+            </tr>    
+        </table>    
+        
+        
+    </li>  
+<!-- 
+-0
+-1
+-2
+- #### COLUNA 1 FIM #### --> 
+<!-- 
+-0
+-1
+-2    
+-->
+
+
+
+
+
+
+
+
+</ul>
+</div>
+<!-- +++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++ 
+-0
+-1
+-2
+- #### MENU FIM #### --> 
+<!-- 
+-0
+-1
+-2    
++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++--> 
+
+
+
+
+
+
+
+<!-- +++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++ 
+-0
+-1
+-2
+- #### PÁGINA INICIAL #### --> 
+<!-- 
+-0
+-1
+-2    
++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++--> 
+        <div id="pagina_inicial_controle_de_validade" style="">
+                        
+            <table align="center" width="100%" border="0" cellpadding="0" cellspacing="0" style="margin: 0px; padding: 0px">      
+                <tr>
+                    <td width="100%" colspan="2" style="margin: 0px; padding: 0px">
+                        
+                        <ul style="list-style:none; padding: 0px; margin: 0px; width:100%;" >    
+    
+                            <li style="padding: 0px; margin: 0px; width:100%; color:black; font-family:  Arial, Helvetica, sans-serif; font-size: 150%;">
+        
+                                <!--     onclick="window.open('', '_parent');"    -->       <!--     printDiv('divConteudo');    -->
+                                <img src="../arquivos/imagens/002_menu/impressora.png" 
+                                                    style="cursor: pointer; float: left; width: 30px; height: 30px; padding-top: 5px; padding-left: 5px;"
+                                                    title="Imprimit"
+                                                    onclick="printDiv('pagina_inicial_controle_de_validade');"> 
+        
+                                <!--     onclick="window.open('', '_parent');"    _blank  -->       <!--     printDiv('divConteudo');    -->
+                                <img src="../arquivos/imagens/003_login/voltar.png" 
+                                                    style="cursor: pointer; float: right; width: 80px; height: 30px; padding-top: 5px; display: none;"
+                                                    title="Voltar"
+                                                    onclick="window.open('../index.html', '_parent');">
+                            </li> 
+                            
+                            <li align="center"  style="padding: 0px; margin: 0px; width:100%;">
+                                
+                                <h1 align="center" style="font:bold 210% verdana,arial,helvetica;">Controle de Validade</h1>
+                            </li> 
+                            
+                        </ul>
+                    </td>    
+                </tr>
+            </table>  
+            
+            <div style="color: #EF7900; font-weight:bold; margin-top:0px; margin-bottom:10px; margin-left: 20px;"> Opções </div>
+            <!--  -->
+            <div style="margin-left: 20px; font-size: 14px; font-family: verdana,arial,helvetica;">  
+            <!--  -->    
+                <ul style="list-style:none; line-height: 1.5; padding: 0px; margin: 0px;" >
+             
+                    
+                
+                    
+<!-- CONTEÚDO INÍCIO --------------------------------------------------------------------------------->        
+                    <!-- INÍCIO -- -->                      
+                    <li style="float: left;"> <div style="padding: 0px; margin-left: 30px; margin-bottom: 20px;">
+                        <ul style="list-style:none; line-height: 1.5; padding: 0px; margin: 0px;" ><li> <div style="margin-left:0px;"> <table cellpadding="2" cellspacing="2" border="0">
+                            <tr>
+                                <td class="per"> 
+                                    
+                                    <!--    target="_parent"    target="centro"    target="_blank"-->
+                                    <img class="per"  src="../arquivos/imagens/006_controle_de_validade/0002.png" 
+                                        style="width: 250px; height: 300px; cursor: pointer;"
+                                        alt=""
+                                        onclick="window.open('controle_de_validade_0001_01_adicionar_produto.html' + '?' + 'usuario_logado' + '=' + document.getElementById('usuario_logado_id_nome').value,  
+                                            '_blank ');"                                          
+                                    > 
+
+                                </td> 
+                            </tr> 
+                            </table> </div> </li> </ul></div>
+                    </li>
+                    <!-- FIM -- -->   
+<!-- CONTEÚDO FIM ---------------------------------------------------------------------------------> 
+
+
+
+<!-- CONTEÚDO INÍCIO --------------------------------------------------------------------------------->        
+                    <!-- INÍCIO -- -->                      
+                    <li style="float: left;"> <div style="padding: 0px; margin-left: 30px; margin-bottom: 20px;">
+                        <ul style="list-style:none; line-height: 1.5; padding: 0px; margin: 0px;" ><li> <div style="margin-left:0px;"> <table cellpadding="2" cellspacing="2" border="0">
+                            <tr>
+                                <td class="per"> 
+                                    
+                                    <!--    target="_parent"    target="centro"    target="_blank"-->
+                                    <img class="per"  src="../arquivos/imagens/006_controle_de_validade/0003.png" 
+                                        style="width: 250px; height: 300px; cursor: pointer;"
+                                        alt=""
+                                        onclick="window.open('controle_de_validade_0003_01_visualizar_lista_de_produtos_com_imagens.html' + '?' + 'usuario_logado' + '=' + document.getElementById('usuario_logado_id_nome').value, 
+                                            '_blank ');"                                          
+                                    > 
+    
+                                </td> 
+                            </tr> 
+                            </table> </div> </li> </ul></div>
+                    </li>
+                    <!-- FIM -- -->   
+<!-- CONTEÚDO FIM --------------------------------------------------------------------------------->    
+
+
+
+<!-- CONTEÚDO INÍCIO --------------------------------------------------------------------------------->        
+                    <!-- INÍCIO -- -->                      
+                    <li style="float: left;"> <div style="padding: 0px; margin-left: 30px; margin-bottom: 20px;">
+                        <ul style="list-style:none; line-height: 1.5; padding: 0px; margin: 0px;" ><li> <div style="margin-left:0px;"> <table cellpadding="2" cellspacing="2" border="0">
+                            <tr>
+                                <td class="per"> 
+                                    
+                                    <!--    target="_parent"    target="centro"    target="_blank"-->
+                                    <img class="per"  src="../arquivos/imagens/006_controle_de_validade/0004.png" 
+                                        style="width: 250px; height: 300px; cursor: pointer;"
+                                        alt=""
+                                        onclick="window.open('controle_de_validade_0003_02_visualizar_lista_de_produtos_na_tabela.html' + '?' + 'usuario_logado' + '=' + document.getElementById('usuario_logado_id_nome').value, 
+                                            '_blank ');"                                          
+                                    > 
+    
+                                </td> 
+                            </tr> 
+                            </table> </div> </li> </ul></div>
+                    </li>
+                    <!-- FIM -- -->   
+<!-- CONTEÚDO FIM ---------------------------------------------------------------------------------> 
+
+
+
+                
+                
+                </ul>
+                
+                <p>&nbsp;</p>                 
+            <!--  -->
+            </div>
+            <!--  -->
+        </div>
+        <!--id="corpo"-->
+<!-- +++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++ 
+-0
+-1
+-2
+- #### APÓS O LOGIN FIM #### --> 
+<!-- 
+-0
+-1
+-2    
++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++--> 
+
+
+
+
+
+
+
+
+<!-- 
+-0
+-1
+-2
+- #### JQUERY INÍCIO #### --> 
+<!-- 
+-0
+-1
+-2    
+-->  
+<script type="text/javascript">
+    
+    function aumentar_imagem( id ){
+         
+         if ( $('#'+id).hasClass("ativo") === true ){
+             
+            $('#'+id).animate({height:"150px",width:"150px"});
+            
+            $('#'+id).removeClass('ativo');
+         }
+         else{
+            
+            $('#'+id).animate({height:"500px",width:"500px"});
+            
+            $('#'+id).addClass('ativo');           
+        }
+     }
+     
+     
+    jQuery(document).ready(function(){    
+    
+        setTimeout(function(){ setando_parametros(); }, 0);
+
+    });
+    
+    
+    
+function setando_parametros(){
+//INÍCIO - BAIXANDO TABELA PRODUTOS POR EAN  
+    try{
+        
+    //captura a url da página
+    var url = window.location.href; 
+    //alert("URL CAPTURADA: \n\n" + url);
+    
+    //tenta localizar o ?
+    var res = url.split('?');
+    
+    // Verificando se a página tem parâmetros
+    if (res[1] === undefined) {
+        //alert('página sem parâmetros.');                                             // _parent        _blank
+        window.location.href = '../index.html';
+    }
+    else{
+        //alert('página tem parâmetros.');
+        
+        if (res[1] !== undefined) {
+		//tenta localizar os & (pode haver mais de 1)
+            var parametros = res[1].split('&');
+            //alert('Parametros encontrados:\n' + parametros);
+        
+            for( var cont = 0; cont < parametros.length; cont++ ){                  
+                if( cont === 1 ){
+
+                    if( parametros[cont] !== undefined ){
+                
+                        var dados = parametros[cont].split('=');
+                
+                        //alert(
+                        //    'Parametro Encontrado: ' + dados[0] + '\n' +
+                        //    'Valor Parâmetro: ' + dados[1]
+                        //);
+                        var nome_do_parametro = dados[0];
+                        var valor_do_parametro = dados[1];
+                        
+                        recebendo_e_tratando_parametros( nome_do_parametro, valor_do_parametro );
+                    }
+                }
+                else{
+                    
+                    if( parametros[cont] !== undefined ){
+                
+                        var dados = parametros[cont].split('=');
+                
+                        //alert(
+                        //    'Parametro Encontrado: ' + dados[0] + '\n' +
+                        //    'Valor Parâmetro: ' + dados[1]
+                        //);
+                        var nome_do_parametro = dados[0];
+                        var valor_do_parametro = dados[1];
+                        
+                        recebendo_e_tratando_parametros( nome_do_parametro, valor_do_parametro );
+                    }
+                }
+            }
+        }
+    }    
+                
+    }catch(Exception){}
+//FIM - BAIXANDO TABELA PRODUTOS POR EAN           
+}
+
+//recebendo parâmetros
+function recebendo_e_tratando_parametros( nome_do_parametro, valor_do_parametro ){
+     try{
+         
+         //alert('\nnome_do_parametro: ' + nome_do_parametro + '\nvalor_do_parametro: ' + valor_do_parametro );
+         
+         document.getElementById("usuario_logado_id_nome").value = valor_do_parametro;     
+         
+    }catch(Exception){}
+}
+                  
+     
+</script>
+<!-- 
+-0
+-1
+-2
+- #### JQUERY FIM #### --> 
+<!-- 
+-0
+-1
+-2    
++++++++++++++++++++++++++++++++++++++++++++++++++++++++++   
+-->
+
+
+    </body>
+</html>

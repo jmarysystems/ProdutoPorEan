@@ -5,11 +5,111 @@
         <title></title>
         <meta charset="UTF-8">  
         
-        <meta http-equiv="refresh" content=1;url="bate_papo_web/login.html">     
+        <!-- <meta http-equiv="refresh" content=1;url="www.jmarysystems.com.br">     -->   
         
         <meta name="viewport" content="width=device-width, initial-scale=1.0">    
-                       
-        <style>          
+        
+        <script type="text/javascript" src='arquivos/js/js_bate_papo_web/0000_01_dados_gerais.js'></script>
+
+        <script type="text/javascript" src='arquivos/js/js_index/_01_01_baixando_planilhas_google.js'></script>
+        <script type="text/javascript" src='arquivos/js/js_index/_01_02_listar_na_tabela_html_a_planilha_principal.js'></script> 
+        <script type="text/javascript" src='arquivos/js/js_index/_01_03_percorrer_tabela_html_fazer_alteracoes_e_exclusoes.js'></script>
+        <script type="text/javascript" src='arquivos/js/js_index/_01_04_tabela_html_configuracoes_adicionar_eventos_a_todas_as_linhas.js'></script>
+        <script type="text/javascript" src='arquivos/js/js_index/_02_01_index_tabela_html_login.js'></script>
+                
+        
+        
+        <script type="text/javascript" src='arquivos/js/js_index/_0000_01_controle_de_telas.js'></script>
+        
+        <script type="text/javascript" src='arquivos/js/js_index/_0001_01_index_tabela_usuario_login.js'></script>               
+        <script type="text/javascript" src='arquivos/js/js_index/_0002_01_index_X_tabela_usuario_X_criar_novo_usuario.js'></script>
+        <script type="text/javascript" src='arquivos/js/js_index/_0003_01_index_X_tabela_usuario_X_alterar_exluir_usuario.js'></script>
+        <script type="text/javascript" src='arquivos/js/js_index/_0003_02_index_X_tabela_usuario_X_exluir_usuario.js'></script>
+        <script type="text/javascript" src='arquivos/js/js_index/_0003_03_index_X_tabela_usuario_X_alterar_usuario.js'></script>        
+        
+        
+        <script type="text/javascript" src='arquivos/js/js_bate_papo_web/0001_01_tabela_usuario_consultar_fazer_login_e_listar_contatos.js'></script>
+        <script type="text/javascript" src='arquivos/js/js_bate_papo_web/0001_02_tabela_usuario_cadastrar_consultar_usuario_antes_de_cadastrar.js'></script>
+        <script type="text/javascript" src='arquivos/js/js_bate_papo_web/0001_03_tabela_usuario_alterar.js'></script>
+        <script type="text/javascript" src='arquivos/js/js_bate_papo_web/0001_04_tabela_usuario_excluir.js'></script>
+        <script type="text/javascript" src='arquivos/js/js_bate_papo_web/0002_01_tabela_contato_consultar_e_cadastrar.js'></script>
+        <script type="text/javascript" src='arquivos/js/js_bate_papo_web/0002_02_tabela_contato_cadastrar_e_listar_contatos.js'></script>
+        <script type="text/javascript" src='arquivos/js/js_bate_papo_web/0002_03_tabela_contato_alterar.js'></script>
+        <script type="text/javascript" src='arquivos/js/js_bate_papo_web/0002_04_tabela_contato_excluir.js'></script>
+        <script type="text/javascript" src='arquivos/js/js_bate_papo_web/0003_01_listar_contatos.js'></script>
+        <script type="text/javascript" src='arquivos/js/js_bate_papo_web/0003_02_listar_contatos_verificar_se_o_contato_tem_imagem.js'></script>
+        <script type="text/javascript" src='arquivos/js/js_bate_papo_web/0003_03_listar_contatos_exibir_imagens_dos_contatos.js'></script>
+        <script type="text/javascript" src='arquivos/js/js_bate_papo_web/0003_04_registrar_mensagem_direita.js'></script>
+        <script type="text/javascript" src='arquivos/js/js_bate_papo_web/0003_05_registrar_mensagem_esquerda.js'></script>
+        <script type="text/javascript" src='arquivos/js/js_bate_papo_web/0004_01_enviar_mensagem.js'></script>
+        <script type="text/javascript" src='arquivos/js/js_bate_papo_web/0003_03_listar_contatos_escolha_01.js'></script>
+        <script type="text/javascript" src='arquivos/js/js_bate_papo_web/0003_03_listar_contatos_percorer_todos.js'></script>
+        
+        <script type="text/javascript" src='arquivos/js/js_bate_papo_web/9999_1_utilitario_baixar_imagem.js'></script>
+        
+        <script type="text/javascript" src='arquivos/js/imprimir_div.js'></script>
+        
+        <script type="text/javascript" src='arquivos/js/jquery.js'></script>
+        
+        <script type="text/javascript" src='arquivos/js/js_quagga/quagga.min.js'></script>
+        
+        
+        <!-- <script type="text/javascript" src='../arquivos/js/js_bate_papo_web/js_login_001.js'></script> --> 
+       
+        <style>
+            
+            .per { box-shadow: 0px 0px 10px #222; }
+            .per:hover { box-shadow: 10px 10px 10px #422; }
+            
+#tabela{
+    width:100%;
+    border:solid 1px;
+    text-align:left;
+    border-collapse:collapse;
+    
+    box-shadow: 0 5px 30px darkgrey;
+    border-spacing: 0;
+}
+
+/**Cores**/
+#tabela tr:nth-child(odd){
+  background-color: #eee;
+}
+
+/**Cor quando passar por cima**/
+#tabela tr:hover td{
+  background-color: #feffb7;
+}
+
+/**Cor quando selecionado**/
+#tabela tr.selecionado td{
+  background-color: #aff7ff;
+}
+ 
+#tabela tbody tr{
+    border:solid 1px;
+    height:30px;
+    cursor:pointer; /**importante para não mostrar cursor de texto**/
+}
+
+#tabela tbody tr td{
+    border:solid 1px;
+}
+ 
+#tabela thead{
+    background:beige;
+}
+ 
+#tabela thead th:nth-child(1){
+    width:100px;
+}
+ 
+#tabela input{
+    color:navy;
+    width:100%;
+}
+
+
         </style>
     </head>
     
@@ -17,7 +117,33 @@
         style="background-color: #D3D3D3; width: 100%; height: 100%; padding: 0; margin: 0;
                font-family: Arial, Helvetica, sans-serif; font-size: 14px; color: black; line-height: 1.5;" > 
         
-        <!-- +++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++ 
+        <!-- <source src="../arquivos/sons/whatsapp001.mp3" type="audio/mpeg"> --> 
+        <!-- <source src="../arquivos/sons/iphone_sms.mp3" type="audio/mpeg"> --> 
+        <audio id="audio" controls style="display: none; padding: 0; margin: 0;"> 
+            
+            <source src="arquivos/sons/minions.mp3" type="audio/mpeg">
+        </audio>
+        
+<!-- input(S) ################################################################# -->         
+        <input type="hidden" id="tabela_usuarios" value="null">
+        
+        <input type="hidden" id="tabela_imagens_dos_contatos" value="null">
+<!-- input(S) ################################################################# -->   
+
+<!-- input(S) ################################################################# -->  
+    <input type="hidden" id="usuario_logado_imagem_sim_ou_null" value="null">
+    <input type="hidden" id="usuario_logado_imagem" value="null">
+    <input type="hidden" id="usuario_logado" value="null"> 
+    <input type="hidden" id="usuario_logado_id" value="null">
+    <input type="hidden" id="usuario_logado_id_x" value="null">
+    <input type="hidden" id="usuario_logado_id_nome" value="null">
+    <input type="hidden" id="usuario_logado_id_sobrenome" value="">    
+    <input type="hidden" id="usuario_logado_pass" value="null">
+    <input type="hidden" id="usuario_logado_email" value="null">
+    <input type="hidden" id="usuario_logado_quantidade_de_alteracoes" value="null">
+<!-- input(S) ################################################################# -->  
+
+<!-- +++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++ 
 -0
 -1
 -2
@@ -80,19 +206,26 @@
         > 
             -)-> JMarySystems <-(- </a>  
         
-        <a 
-            href="login.html" 
-            style="
-                float:           right;
-                color:           #fff; font-family:  Arial, Helvetica, sans-serif; 
-                font-size:       19px; padding-left: 10px; 
-                padding-right:   10px; line-height:  50px; 
-                text-decoration: none;"
-           
-            onMouseover=" this.style.color='black'; "
-            onMouseout="  this.style.color='#fff'; "       
-        > 
-            Sair </a>  
+        <table border="0" cellpadding="0" cellspacing="0" style="float: right; width: 40px; height: 50px; padding: 0px; margin: 0px;">
+            <tr>
+                <td align="center" style="padding-right: 2px;"> 
+                    
+                    <img id="cara_palida_img" src="arquivos/imagens/003_login/cont.png" 
+                        style="cursor: pointer; width: 40px; height: 45px; padding: 0px; margin: 0px; display: none"                        
+                        title="Usuário"
+                        
+                        onclick="
+                                  
+                            _0000_01_controle_de_telas( 'editar_perfil' );
+                                                           
+                            document.getElementById('img_editar_perfil').src = document.getElementById('usuario_logado_imagem').value;
+                        "
+                    >  
+                    
+                </td>    
+            </tr>    
+        </table>    
+        
         
     </li>  
 <!-- 
@@ -125,20 +258,854 @@
 -1
 -2    
 +++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++--> 
+
+
+
+
+
+
+
+
+<!-- +++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++ 
+-0
+-1
+-2
+- #### LOGIN INÍCIO #### --> 
+<!-- 
+-0
+-1             
+-2    
++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++--> 
+<div id="resposta" style="padding: 0; margin: 0;">
+<br>
+<table id="centrot" border="0" cellpadding="0" cellspacing="0" style="width:100%;"> 
+    
+    <tr>
+        <td style="background-color: #D3D3D3; width:30%;"> </td>
         
+        <td align="center" style="background-color: #D3D3D3;"> 
+            
+            <a style="color:black; font-family:  Arial, Helvetica, sans-serif; font-size: 150%; text-decoration: none;"
+               onMouseover=" this.style.color='#fff'; this.style.backgroundColor='#23871C'; "
+               onMouseout="  this.style.color='black'; this.style.backgroundColor='#D3D3D3'; "          
+               > 
+                LOGIN 
+            </a>
+            
+        </td>
         
+        <td style="background-color: #D3D3D3; width:30%;"> </td>
+    </tr> 
+    
+    <tr>
+        <td align="right" style="background-color: #D3D3D3; width:30%; padding-right: 5px;">
+            
+            <img src="arquivos/imagens/003_login/logo_jm_01.png" alt="" width="150" height="150">            
+        </td>
         
+        <td style="background-color: #D3D3D3; width:40%;">
+            
+            <div style="background-color: #3A3A3A; height:50px;   color:#fff; font-family:  Arial, Helvetica, sans-serif; font-size: 120%;">
+                
+                Usuário: 
+                <input id="form_login_login" name="login" type="text" style="background-color: #3A3A3A; width:100%; height: 50px; color:#fff; font-family:  Arial, Helvetica, sans-serif; font-size: 150%;" value="">
+            </div>
+            
+            <br>
+            
+            <div style="background-color: #3A3A3A; height:50px;   color:#fff; font-family:  Arial, Helvetica, sans-serif; font-size: 120%;">
+                
+                Senha: 
+                <input id="form_login_senha" name="senha" type="password" style="background-color: #3A3A3A; width:100%; height: 50px; color:#fff; font-family:  Arial, Helvetica, sans-serif; font-size: 150%;" value="">
+            </div>
+            
+        </td>
         
+        <td style="background-color: #D3D3D3; width:30%;">
+            
+               
+        </td>
+    </tr>     
+    
+    <tr>
+        <td style="background-color: #D3D3D3; width:30%;"> </td>
         
+        <td align="center" style="background-color: #D3D3D3;"> 
+            
+            <!--    _0001_01_index_tabela_usuario_login   _02_01_index_tabela_html_login     -->
+            <img src="arquivos/imagens/003_login/entrar.png" 
+                style="cursor: pointer; "
+                onclick="_02_01_index_tabela_html_login(
+                    document.getElementById ('form_login_login').value,
+                    document.getElementById ('form_login_senha').value,
+                    document.getElementById ('resposta').innerHTML
+                );" alt="" width="140" height="50">
+            
+            <input style="float:right; margin-top: 5px; cursor: pointer;" 
+                   
+                type="button" value="Novo Usuário" 
+                    onclick="
+                        
+                        document.getElementById('novo_usuario_alterar').style.display = 'none';  
+                        document.getElementById('novo_usuario_excluir').style.display = 'none';
+                        document.getElementById('novo_usuario_cadastrar').style.display = 'block';
+                        
+                        document.getElementById('status_novo_user_cadastrar_alterar').innerHTML = 'Novo Usuário';
+        
+                         _0000_01_controle_de_telas( 'novo_usuario_cadastrar' );
+                         
+                        document.getElementById('form_novo_login').value = ''; 
+                        document.getElementById('form_novo_senha').value = '';  
+                        document.getElementById('form_novo_nome').value = ''; 
+                        document.getElementById('form_novo_recuperacao').value = ''; 
+                        
+                        index_X_tabela_usuario_X_criar_novo_usuario();
+                    "
+                >
+        </td>
+        
+        <td style="background-color: #D3D3D3; width:30%;"> </td>
+    </tr> 
+    
+</table>
+</div>
+<!-- +++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++ 
+-0
+-1
+-2
+- #### LOGIN FIM #### --> 
+<!-- 
+-0
+-1             
+-2    
++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++-->  
+
+
+
+
+
+
+
+
+
+
+<!-- +++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++ 
+-0
+-1
+-2
+- #### EDITAR PERFIL INÍCIO #### --> 
+<!-- 
+-0
+-1             
+-2    
++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++--> 
+<div id="editar_perfil" style="padding: 0; margin: 0; display: none;">
+
+<ul style="list-style:none; padding: 0px; margin: 0px; width:100%;" >    
+    
+    <li style="padding: 0px; margin: 0px; width:100%; color:black; font-family:  Arial, Helvetica, sans-serif; font-size: 150%;">
+        
+        <!--     onclick="window.open('', '_parent');"    -->       <!--     printDiv('divConteudo');    -->
+        <img src="arquivos/imagens/002_menu/impressora.png" 
+                                                    style="cursor: pointer; float: left; width: 30px; height: 30px;"
+                                                    title="Imprimit"
+                                                    onclick="printDiv('editar_perfil');"> 
+        
+        <!--     onclick="window.open('', '_parent');"    -->       <!--     printDiv('divConteudo');    -->
+        <img src="arquivos/imagens/003_login/voltar.png" 
+                                                    style="cursor: pointer; float: right; width: 80px; height: 30px;"
+                                                    title="Voltar"
+                                                    onclick="
+                                                        
+                                                        _0000_01_controle_de_telas( 'resposta' );
+
+                                                    ">    
+    </li> 
+                            
+    <li align="center"  style="padding: 0px; margin: 0px; width:100%; color:black; font-family:  Arial, Helvetica, sans-serif; font-size: 150%;">
+        <a style="color:black; font-family:  Arial, Helvetica, sans-serif; font-size: 150%; text-decoration: none;"
+            onMouseover=" this.style.color='#fff'; this.style.backgroundColor='#23871C'; "
+            onMouseout="  this.style.color='black'; this.style.backgroundColor='#D3D3D3'; "          
+        > 
+            Editar Perfil
+        </a>
+    </li> 
+
+<li> 
+    
+<table id="tb_editar_perfil" border="0" cellpadding="0" cellspacing="0" style="width:100%;"> 
+        
+    <tr>
+        <td align="right" style="background-color: #D3D3D3; width:30%; padding-right: 5px;">
+            
+            <img id="img_editar_perfil" src="arquivos/imagens/003_login/logo_jm_01.png" alt="" width="150" height="150">            
+        </td>
+        
+        <td style="background-color: #D3D3D3; width:40%;">
+            
+            <div style="background-color: #3A3A3A; height:50px;   color:#fff; font-family:  Arial, Helvetica, sans-serif; font-size: 120%;">
+                
+                Confirmar Usuário: 
+                <input id="editar_form_login_login" name="login" type="text" style="background-color: #3A3A3A; width:100%; height: 50px; color:#fff; font-family:  Arial, Helvetica, sans-serif; font-size: 150%;" value="">
+            </div>
+            
+            <br>
+            
+            <div style="background-color: #3A3A3A; height:50px;   color:#fff; font-family:  Arial, Helvetica, sans-serif; font-size: 120%;">
+                
+                Confirmar Senha: 
+                <input id="editar_form_login_senha" name="senha" type="password" style="background-color: #3A3A3A; width:100%; height: 50px; color:#fff; font-family:  Arial, Helvetica, sans-serif; font-size: 150%;" value="">
+            </div>
+            
+        </td>
+        
+        <td style="background-color: #D3D3D3; width:30%;">
+            
+               
+        </td>
+    </tr>     
+    
+    <tr>
+        <td style="background-color: #D3D3D3; width:30%;"> </td>
+        
+        <td align="center" style="background-color: #D3D3D3;"> 
+            
+            <img src="arquivos/imagens/003_login/entrar.png" 
+                style="cursor: pointer; "
+                onclick="_0003_01_index_X_tabela_usuario_X_alterar_exluir_usuario__f1(
+                    document.getElementById ('editar_form_login_login').value,
+                    document.getElementById ('editar_form_login_senha').value,
+                    document.getElementById ('editar_perfil').innerHTML
+                );" alt="" width="140" height="50">
+        </td>
+        
+        <td style="background-color: #D3D3D3; width:30%;"> </td>
+    </tr> 
+    
+</table>
+
+</li>
+</ul>
+
+</div>
+<!-- +++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++ 
+-0
+-1
+-2
+- #### EDITAR PERFIL FIM #### --> 
+<!-- 
+-0
+-1             
+-2    
++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++-->  
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<!-- +++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++ 
+-0
+-1
+-2
+- #### NOVO_USUÁRIO INÍCIO #### --> 
+<!-- 
+-0
+-1             
+-2    
++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++--> 
+<div id="div_novo_usuario" style="display: none; padding: 0; margin: 0; width:100%; height: 100%;">
+    
+<ul style="list-style:none; padding: 0px; margin: 0px; width:100%;" >    
+    
+    <li style="padding: 0px; margin: 0px; width:100%; color:black; font-family:  Arial, Helvetica, sans-serif; font-size: 150%;">
+        
+        <!--     onclick="window.open('', '_parent');"    -->       <!--     printDiv('divConteudo');    -->
+        <img src="arquivos/imagens/002_menu/impressora.png" 
+                                                    style="cursor: pointer; float: left; width: 30px; height: 30px;"
+                                                    title="Imprimit"
+                                                    onclick="printDiv('div_novo_usuario');"> 
+        
+        <!--     onclick="window.open('', '_parent');"    -->       <!--     printDiv('divConteudo');    -->
+        <img src="arquivos/imagens/003_login/voltar.png" 
+                                                    style="cursor: pointer; float: right; width: 80px; height: 30px;"
+                                                    title="Voltar"
+                                                    onclick="
+                                                        
+                                                        _0000_01_controle_de_telas( 'resposta' );
+                                                        
+                                                    ">    
+    </li> 
+                            
+    <li align="center"  style="padding: 0px; margin: 0px; width:100%; color:black; font-family:  Arial, Helvetica, sans-serif; font-size: 150%;">
+        
+        <a id='status_novo_user_cadastrar_alterar' style="color:black; font-family:  Arial, Helvetica, sans-serif; font-size: 150%; text-decoration: none;"
+            onMouseover=" this.style.color='#fff'; this.style.backgroundColor='#23871C'; "
+            onMouseout="  this.style.color='black'; this.style.backgroundColor='#D3D3D3'; "       
+        > 
+           Novo Usuário 
+        </a>
+        
+    </li> 
+
+    <li>     
+        <table id="tb_novo_usuario" border="0" cellpadding="0" cellspacing="0" style="width:100%; padding: 0; margin: 0;">     
+            <tr>
+                <td align="center" style="background-color: #D3D3D3; width:100%;">
+                    
+                    <ul style="list-style:none; padding: 0px; margin: 0px; width:100%;" >   
+                        
+                        <li style="">
+                            <img id="output_image" src="arquivos/imagens/003_login/sem_imagem.gif" alt="" width="150" height="150"> 
+                        </li>
+                        
+                        <li style="">
+                            <table border="0" cellpadding="0" cellspacing="0" style="width:100%; padding: 0; margin: 0;">
+                                <tr>
+                                    <td align="center">
+                                        <ul style="list-style:none; padding: 0px; margin: 0px; width:100%;" >
+                                            <li style="width:100%; background-color: #3A3A3A; color:#fff; font-family:  Arial, Helvetica, sans-serif; font-size: 120%;">
+                                                DDD + Telefone:
+                                            </li>
+                                            <li style="">
+                                                <input id="form_novo_login" name="login" type="text" style="background-color: #3A3A3A; height: 50px; color:#fff; font-family:  Arial, Helvetica, sans-serif; font-size: 150%;" value="">
+                                            </li>
+                                        </ul>                                                                         
+                                    </td>
+                                </tr>
+                            </table> 
+                        </li> 
+                        
+                        <li style="padding-top: 5px; ">
+                            <table border="0" cellpadding="0" cellspacing="0" style="width:100%; padding: 0; margin: 0;">
+                                <tr>
+                                    <td align="center">
+                                        <ul style="list-style:none; padding: 0px; margin: 0px; width:100%;" >
+                                            <li style="width:100%; background-color: #3A3A3A; color:#fff; font-family:  Arial, Helvetica, sans-serif; font-size: 120%;">
+                                                Senha:
+                                            </li>
+                                            <li style="">
+                                                <input id="form_novo_senha" name="senha" type="text" style="background-color: #3A3A3A; height: 50px; color:#fff; font-family:  Arial, Helvetica, sans-serif; font-size: 150%;" value="">
+                                            </li>
+                                        </ul>                                                                         
+                                    </td>
+                                </tr>
+                            </table> 
+                        </li>
+                        
+                        <li style="padding-top: 5px; ">
+                            <table border="0" cellpadding="0" cellspacing="0" style="width:100%; padding: 0; margin: 0;">
+                                <tr>
+                                    <td align="center">
+                                        <ul style="list-style:none; padding: 0px; margin: 0px; width:100%;" >
+                                            <li style="width:100%; background-color: #3A3A3A; color:#fff; font-family:  Arial, Helvetica, sans-serif; font-size: 120%;">
+                                                Seu Primeiro Nome:
+                                            </li>
+                                            <li style="">
+                                                <input id="form_novo_nome" name="nome" type="text" style="background-color: #3A3A3A; height: 50px; color:#fff; font-family:  Arial, Helvetica, sans-serif; font-size: 150%;" value="">
+                                            </li>
+                                        </ul>                                                                         
+                                    </td>
+                                </tr>
+                            </table> 
+                        </li> 
+                        
+                        <li style="padding-top: 5px; ">
+                            <table border="0" cellpadding="0" cellspacing="0" style="width:100%; padding: 0; margin: 0;">
+                                <tr>
+                                    <td align="center">
+                                        <ul style="list-style:none; padding: 0px; margin: 0px; width:100%;" >
+                                            <li style="width:100%; background-color: #3A3A3A; color:#fff; font-family:  Arial, Helvetica, sans-serif; font-size: 120%;">
+                                                Email de Recuperação da Conta:
+                                            </li>
+                                            <li style="">
+                                                <input id="form_novo_recuperacao" name="nome" type="text" style="background-color: #3A3A3A; height: 50px; color:#fff; font-family:  Arial, Helvetica, sans-serif; font-size: 150%;" value="">
+                                            </li>
+                                        </ul>                                                                         
+                                    </td>
+                                </tr>
+                            </table> 
+                        </li> 
+                        
+                        <li style="padding-top: 5px; ">
+                            <table border="0" cellpadding="0" cellspacing="0" style="width:100%; padding: 0; margin: 0; ">
+                                <tr>
+                                    <td align="center">
+                                        <ul style="list-style:none; padding: 0px; margin: 0px; width:100%;" >
+                                            <li style="width:100%; background-color: #3A3A3A; color:#fff; font-family:  Arial, Helvetica, sans-serif; font-size: 120%;">
+                                                Escolher Imagem do Seu Perfil:
+                                            </li>
+                                            <li style="">
+                                                <input id="form_novo_imagem" type="file" accept="image/*" onchange="encodeImageFileAsURL();" style="background-color: #3A3A3A; height: 50px; color:#fff; font-family:  Arial, Helvetica, sans-serif; font-size: 90%;" >
+                                            </li>
+                                        </ul>                                                                         
+                                    </td>
+                                </tr>
+                            </table> 
+                        </li> 
+                        
+                        <li style="padding-top: 5px; ">
+                            <table border="0" cellpadding="0" cellspacing="0" style="width:100%; padding: 0; margin: 0;">
+                                <tr>
+                                    
+                                    <td align="center" id='novo_usuario_cadastrar'>
+                                        <ul style="list-style:none; padding: 0px; margin: 0px; width:100%;" >
+
+                                            <li style="">
+                                                <img src="arquivos/imagens/003_login/cadastrar.png" 
+                                                    style="cursor: pointer; "
+                                                    
+                                                    onClick="                                                                                                                
+                                                        _0002_01_index_X_tabela_usuario_index_X_tabela_usuario_X_criar_novo_usuario(
+                                                            document.getElementById ('form_novo_login').value,
+                                                            document.getElementById ('form_novo_senha').value,
+                                                            document.getElementById ('form_novo_nome').value,
+                                                            document.getElementById ('form_novo_recuperacao').value,
+                                                            document.getElementById ('form_novo_imagem').src,
+                                                            document.getElementById ('div_novo_usuario').innerHTML 
+                                                        );
+                                                    "
+                                                    
+                                                    alt="" width="140" height="50">
+                                            </li>
+                                        </ul>                                                                         
+                                    </td>
+                                    
+                                    <td align="center" id='novo_usuario_alterar'>
+                                        <ul style="list-style:none; padding: 0px; margin: 0px; width:100%;" >
+
+                                            <li style="">
+                                                <img src="arquivos/imagens/003_login/alterar.png" 
+                                                    style="cursor: pointer; "
+                                                    onclick="_0003_03_index_X_tabela_usuario_X_alterar_usuario(
+                                                        document.getElementById('usuario_logado_id').value,
+                                                        document.getElementById ('form_novo_login').value,
+                                                        document.getElementById ('form_novo_senha').value,
+                                                        document.getElementById ('form_novo_nome').value,
+                                                        document.getElementById ('form_novo_recuperacao').value,
+                                                        document.getElementById ('form_novo_imagem').src,
+                                                        document.getElementById ('div_novo_usuario').innerHTML );"
+                                                    alt="" width="140" height="50">
+                                            </li>
+                                        </ul>                                                                         
+                                    </td>
+                                    
+                                    <td align="center" id='novo_usuario_excluir'>
+                                        <ul style="list-style:none; padding: 0px; margin: 0px; width:100%;" >
+
+                                            <li style="">
+                                                <img src="arquivos/imagens/003_login/excluir.png" 
+                                                    style="cursor: pointer; "
+                                                    onclick="_0003_02_index_X_tabela_usuario_X_exluir_usuario(
+                                                        document.getElementById('usuario_logado_id').value,         
+                                                        document.getElementById ('usuario_logado').value,
+                                                        document.getElementById ('usuario_logado_pass').value,
+                                                        document.getElementById('usuario_logado_id_nome').value,
+                                                        document.getElementById ('usuario_logado_email').value,
+                                                        document.getElementById ('form_novo_imagem').src,
+                                                        document.getElementById ('div_novo_usuario').innerHTML );"
+                                                    alt="" width="140" height="50">
+                                            </li>
+                                        </ul>                                                                         
+                                    </td>
+                                    
+                                </tr>
+
+                            </table> 
+                        </li>
+                        
+                    </ul>                                          
+                </td>                  
+            </tr>        
+        </table>       
+    </li> 
+</ul>
+</div>    
+
+<script type='text/javascript'>
+    
+    var imgXX = "null"; // <--- data: base64
+    
+  function encodeImageFileAsURL() {
+
+    var filesSelected = document.getElementById("form_novo_imagem").files;
+    if (filesSelected.length > 0) {
+      var fileToLoad = filesSelected[0];
+
+      var fileReader = new FileReader();
+
+      fileReader.onload = function(fileLoadedEvent) {
+        var srcData = fileLoadedEvent.target.result; // <--- data: base64
+        imgXX = srcData;
+
+        var newImage = document.createElement('img');
+        newImage.src = srcData;
+
+        document.getElementById("output_image").src = srcData;
+        //alert("Converted Base64 version is " + document.getElementById("imgTest").innerHTML);
+        //console.log("Converted Base64 version is " + document.getElementById("imgTest").innerHTML);
+      }
+      fileReader.readAsDataURL(fileToLoad);
+    }
+  }
+</script>
+<!-- +++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++ 
+-0
+-1
+-2
+- #### NOVO_USUÁRIO FIM #### --> 
+<!-- 
+-0
+-1             
+-2    
++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++-->  
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<!-- +++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++ 
+-0
+-1
+-2
+- #### TABELA USUÁRIOS - INÍCIO #### --> 
+<!-- 
+-0
+-1             
+-2    
++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++--> 
+<div id="divConteudo" style="display: none;">
+    
+    
+    <ul style="list-style:none; padding: 0px; margin: 0px; width:100%;" >    
+    
+    <li style="padding: 0px; margin: 0px; width:100%; color:black; font-family:  Arial, Helvetica, sans-serif; font-size: 150%;">
+        
+        <img src="arquivos/imagens/002_menu/impressora.png" 
+                                                    style="cursor: pointer; float: left; padding-left: 5px; padding-top: 2px;"
+                                                    onclick="printDiv('divConteudo');"
+                                                    alt="Imprimit" width="30" height="30px">
+        
+        <img id="visualizarDados" src="arquivos/imagens/003_login/voltar.png" 
+                                                    style="cursor: pointer; float: right"
+                                                    onclick=""
+                                                    title="Voltar" width="80" height="30px">    
+    </li> 
+                            
+    <li align="center"  style="padding: 0px; margin: 0px; width:100%; color:black; font-family:  Arial, Helvetica, sans-serif; font-size: 150%;">
+        <a style="color:black; font-family:  Arial, Helvetica, sans-serif; font-size: 150%; text-decoration: none;"
+            onMouseover=" this.style.color='#fff'; this.style.backgroundColor='#23871C'; "
+            onMouseout="  this.style.color='black'; this.style.backgroundColor='#D3D3D3'; "       
+        > 
+            Tabela
+        </a>
+    </li> 
+</ul>
+    
+<table id='tabela' border="0" cellpadding="0" cellspacing="0" style=" padding: 0px; margin: 0px;">    
+
+            <thead>
+                <tr>
+                    <th>Id</th>
+                    <th>Comando</th>
+                    <th>Login</th>
+                    <th>Nome Usuário</th>
+                    <th>Email de Recuperação</th>
+                    <th>Pass</th>
+                    <th>Imagem</th>
+                    <th>Count Update</th>
+                </tr>
+                <tr>
+                    <th><input type="text" id="txtColuna1"/></th>
+                    <th><input type="text" id="txtColuna2"/></th>
+                    <th><input type="text" id="txtColuna3"/></th>
+                    <th><input type="text" id="txtColuna4"/></th>
+                    <th><input type="text" id="txtColuna5"/></th>
+                    <th><input type="text" id="txtColuna6"/></th>
+                    <th><input type="text" id="txtColuna7"/></th>
+                    <th><input type="text" id="txtColuna8"/></th>
+                </tr>            
+            </thead>
+            <tbody>
+          
+            </tbody>
+        </table>
+    </div>
+
+<!-- +++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++ 
+-0
+-1
+-2
+- #### TABELA USUÁRIOS - FIM #### --> 
+<!-- 
+-0
+-1             
+-2    
++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++--> 
+
         
 
-        <table border="0" cellpadding="0" cellspacing="0" style="padding: 0; margin: 0; width:100%; height: 100%;">
-            <tr>
-                <td align="center">                                                                                                          
-                    <img id="imagem_do_ean" class="prod_ean"  src="arquivos/imagens/003_login/logo_jm_01.png" alt="" width="150" height="150" style="cursor: zoom-in" >   
-                </td>
-            </tr>
-        </table>             
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<!-- +++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++ 
+-0
+-1
+-2
+- #### APÓS O LOGIN FIM #### --> 
+<!-- 
+-0
+-1
+-2    
++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++--> 
+        <div id="apos_o_login" style="display: none;">
+                        
+            <table align="center" width="100%" border="0" cellpadding="0" cellspacing="0" style="margin: 0px; padding: 0px">      
+                <tr>
+                    <td width="100%" colspan="2" style="margin: 0px; padding: 0px">
+                        
+                        <ul style="list-style:none; padding: 0px; margin: 0px; width:100%;" >    
+    
+                            <li style="padding: 0px; margin: 0px; width:100%; color:black; font-family:  Arial, Helvetica, sans-serif; font-size: 150%;">
+        
+                                <!--     onclick="window.open('', '_parent');"    -->       <!--     printDiv('divConteudo');    -->
+                                <img src="arquivos/imagens/002_menu/impressora.png" 
+                                                    style="cursor: pointer; float: left; width: 30px; height: 30px; padding-top: 5px; padding-left: 5px;"
+                                                    title="Imprimit"
+                                                    onclick="printDiv('resposta');"> 
+        
+                                <!--     onclick="window.open('', '_parent');"    _blank  -->       <!--     printDiv('divConteudo');    -->
+                                <img src="arquivos/imagens/003_login/voltar.png" 
+                                                    style="cursor: pointer; float: right; width: 80px; height: 30px; padding-top: 5px"
+                                                    title="Voltar"
+                                                    onclick="window.open('index.html', '_parent');">
+                            </li> 
+                            
+                            <li align="center"  style="padding: 0px; margin: 0px; width:100%;">
+                                
+                                <h1 align="center" style="font:bold 210% verdana,arial,helvetica;">Menu Principal</h1>
+                            </li> 
+                            
+                        </ul>
+                    </td>    
+                </tr>
+            </table>  
+            
+            <div style="color: #EF7900; font-weight:bold; margin-top:0px; margin-bottom:10px; margin-left: 20px;"> Opções </div>
+            <!--  -->
+            <div style="margin-left: 20px; font-size: 14px; font-family: verdana,arial,helvetica;">  
+            <!--  -->    
+                <ul style="list-style:none; line-height: 1.5; padding: 0px; margin: 0px;" >
+             
+                    
+                
+                    
+<!-- CONTEÚDO INÍCIO --------------------------------------------------------------------------------->        
+                    <!-- INÍCIO -- -->                      
+                    <li style="float: left;"> <div style="padding: 0px; margin-left: 30px; margin-bottom: 20px;">
+                        <ul style="list-style:none; line-height: 1.5; padding: 0px; margin: 0px;" ><li> <div style="margin-left:0px;"> <table cellpadding="2" cellspacing="2" border="0">
+                            <tr>
+                                <td class="per"> 
+                                    
+                                    <!--    target="_parent"    target="centro"    target="_blank"-->
+                                    <img class="per"  src="arquivos/imagens/006_controle_de_validade/0001.png" 
+                                        style="width: 250px; height: 300px; cursor: pointer;"
+                                        alt=""
+                                        onclick="window.open('controle_de_validade/controle_de_validade_0000_01_pagina_inicial.html' + '?' + 'nome_do_usuario' + '=' + document.getElementById('usuario_logado_id_nome').value, 
+                                            '_blank ');"                                          
+                                    > 
+
+                                </td> 
+                            </tr> 
+                            </table> </div> </li> </ul></div>
+                    </li>
+                    <!-- FIM -- -->   
+<!-- CONTEÚDO FIM ---------------------------------------------------------------------------------> 
+
+
+
+<!-- CONTEÚDO INÍCIO --------------------------------------------------------------------------------->        
+                    <!-- INÍCIO -- -->                      
+                    <li style="float: left;"> <div style="padding: 0px; margin-left: 30px; margin-bottom: 20px;">
+                        <ul style="list-style:none; line-height: 1.5; padding: 0px; margin: 0px;" ><li> <div style="margin-left:0px;"> <table cellpadding="2" cellspacing="2" border="0">
+                            <tr>
+                                <td class="per"> 
+                                    
+                                    <!--    target="_parent"    target="centro"    target="_blank"-->
+                                    <img class="per"  src="arquivos/imagens/005_produtos_por_ean/0001.png" 
+                                        style="width: 250px; height: 300px; cursor: pointer;"
+                                        alt=""
+                                        onclick="window.open('produto_por_ean/produto_por_ean_0001_01_consultar_produto_ou_lista_de_produtos.html', 
+                                            '_blank ');"                                          
+                                    > 
+    
+                                </td> 
+                            </tr> 
+                            </table> </div> </li> </ul></div>
+                    </li>
+                    <!-- FIM -- -->   
+<!-- CONTEÚDO FIM --------------------------------------------------------------------------------->    
+
+
+
+
+                
+                
+                </ul>
+                
+                <p>&nbsp;</p>                 
+            <!--  -->
+            </div>
+            <!--  -->
+        </div>
+        <!--id="corpo"-->
+<!-- +++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++ 
+-0
+-1
+-2
+- #### APÓS O LOGIN FIM #### --> 
+<!-- 
+-0
+-1
+-2    
++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++--> 
+
+
+
+
+
+
+
+
+<!-- 
+-0
+-1
+-2
+- #### JQUERY INÍCIO #### --> 
+<!-- 
+-0
+-1
+-2    
+-->  
+<script type="text/javascript">
+    
+    $(function(){
+    $("#tabela input").keyup(function(){       
+        var index = $(this).parent().index();
+        var nth = "#tabela td:nth-child("+(index+1).toString()+")";
+        var valor = $(this).val().toUpperCase();
+        $("#tabela tbody tr").show();
+        $(nth).each(function(){
+            if($(this).text().toUpperCase().indexOf(valor) < 0){
+                $(this).parent().hide();
+            }
+        });
+    });
+ 
+    $("#tabela input").blur(function(){
+        $(this).val("");
+    });
+});
+
+    
+    jQuery(document).ready(function(){    
+    
+        //setTimeout(function(){ _01_01_baixando_planilhas_google(); }, 0); 
+        setTimeout(function(){ _index_js_baixar_tabela_usuarios();             }, 0);        
+        setTimeout(function(){ _index_js_baixar_tabela_imagens_dos_contatos(); }, 0);   
+        
+        setTimeout(function(){   try{ _01_04_tabela_html_configuracoes_adicionando_evento_enviando_dados_selecionados_da_tabela();  }catch(Exception){}  }, 0);
+
+    });
+    
+    
+    function _index_js_baixar_tabela_usuarios(){
+//INÍCIO - BAIXANDO TABELA PRODUTOS POR EAN  
+    try{
+        
+        $.ajax({
+            url: url_planilha_tabela_usuarios,
+            success: function(data) {
+                document.getElementById("tabela_usuarios").value = JSON.stringify(data);
+                _01_02_listar_na_tabela_html_a_planilha_principal();
+            },
+            error : function(error) {
+                //alert(error);
+            }
+        });
+    }catch(Exception){}
+//FIM - BAIXANDO TABELA       
+     }
+     
+     
+     function _index_js_baixar_tabela_imagens_dos_contatos(){
+//INÍCIO - BAIXANDO TABELA 
+    try{
+        
+        $.ajax({
+            url: url_planilha_tabela_imagens_dos_contatos,
+            success: function(data) {
+                document.getElementById("tabela_imagens_dos_contatos").value = JSON.stringify(data);
+            },
+            error : function(error) {
+                //alert(error);
+            }
+        });
+    }catch(Exception){}
+//FIM - BAIXANDO TABELA        
+     }
+             
+     
+</script>
+<!-- 
+-0
+-1
+-2
+- #### JQUERY FIM #### --> 
+<!-- 
+-0
+-1
+-2    
++++++++++++++++++++++++++++++++++++++++++++++++++++++++++   
+-->
+
 
     </body>
 </html>

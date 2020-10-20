@@ -29,7 +29,7 @@
         }
         
         function _01_controle_loop_login( count_x, usuario_digitado, senha_digitada, conteudo_div ){
-            if( count_x < 20 ){      
+            if( count_x < 7 ){      
                 
                 setTimeout(function(){ 
                      var count_xx = count_x + 1;
@@ -38,7 +38,7 @@
             }
             else{
                 
-                alert("Usuário: " + usuario_digitado + " \nNão Cadastrado \nCadastre-se Cara Pálida! \nSe você for cadastrado: verifique sua conexão com a internet.");
+                alert("Usuário: " + usuario_digitado + " \nNão Cadastrado \nCadastre-se! \nSe você for cadastrado: verifique sua conexão com a internet.");
                 document.getElementById("resposta").innerHTML = conteudo_div;
             }
         }
@@ -275,7 +275,7 @@
                 
                 if( tem_mensagem === true ){
 ////******************************************************************************************************                       
-                    var retorno = "";
+                    var retorno_da_imagem_por_parte = "";
                                                             
                     //var imagem_src_data_web22 = pegando_imagem_do_usuario_logado( mensagem_x ); 
                     //document.getElementById("resposta").innerHTML = mensagem_x;
@@ -308,7 +308,7 @@
                             var web_id_usuario_da_linha = importar_Para_Alfabeto_JM( web_id_usuario.trim() ).trim().toUpperCase();
                             if( verificar_igualdade_sem_espaco_no_final( web_id_da_tb_usuario_str, web_id_usuario_da_linha ) === true ){   
                                 
-                                retorno += web_parte;
+                                retorno_da_imagem_por_parte += web_parte;
                             }
                         }else{
                                                        
@@ -320,7 +320,7 @@
                     try{
                         //var imagem_src_data_web22 = baixar_imagem( id );    
                         //document.getElementById("resposta").innerHTML = imagem_src_data_web22;
-                        var imagem_src_data22 = converter_base64( retorno );
+                        var imagem_src_data22 = converter_base64( retorno_da_imagem_por_parte );
                         if ( imagem_src_data22 === undefined || imagem_src_data22 === "" || imagem_src_data22 === null){
                                             
                             imagem_src_data22 = "../arquivos/imagens/003_login/cont.png";
@@ -346,11 +346,13 @@
 //BAIXANDO TABELA   
 ///////////////////////////////////////////////////////////////////////////////////////////////////////////
 
-
         function finalizando( usuario_digitado, nome_digitado, id ){
                            
             document.getElementById("resposta").style.display = 'none'; 
-            document.getElementById("div_meus_contatos").style.display = 'block';  
+            document.getElementById("div_meus_contatos").style.display = 'none';  
+            
+            document.getElementById("apos_o_login").style.display = 'block';  
+            
                                 
             //LOGIN EFETUADO COM SUCESSO 
             document.getElementById("usuario_logado").value = usuario_digitado;
@@ -364,73 +366,3 @@
                                 
             document.getElementById("usuario_logado_id").value = id;      
         }
-
-///////////////////////////////////////////////////////////////////////////////////////////////////////////   
-//PEGANDO APENAS A IMAGEM DO USUÁRIO LOGADO 
-///////////////////////////////////////////////////////////////////////////////////////////////////////////   
-function pegando_imagem_do_usuario_logado( mensagem ){
-        var retorno = "";
-            
-            try{
-                    
-                ////////////////////////////////////////////////////////////
-                var tem_mensagem = false;
-                var linha_recebida = mensagem.split("@");
-                for( var i = 0; i < linha_recebida.length; i++ ) {
-                    if( linha_recebida[i].includes("-") ){
-                        tem_mensagem = true;
-                        break;
-                    }
-                }
-                ////////////////////////////////////////////////////////////
-                    
-                if( tem_mensagem === true ){
-                        
-                    var linha_recebida = mensagem.split("@");            
-                    for( var i = 0; i < linha_recebida.length; i++ ) {
-                        if( linha_recebida[i].includes("-") ){
-                            var web_id_usuario;
-                            var web_email_usuario;
-                            var web_contador;                        
-                            var web_parte;
-
-                            //var id_txt2 = "@" + id_usuario + "j" + email_usuario + "j" + contador  + "j" + parte + "@";
-                            var argumentos = linha_recebida[i].split("j");
-                            for( var j = 0; j < argumentos.length; j++ ) {
-                                if(j === 0){ 
-                                    web_id_usuario = argumentos[j];
-                                }
-                                else if(j === 1){
-                                    web_email_usuario = argumentos[j];
-                                }
-                                else if(j === 2){
-                                    web_contador = argumentos[j];
-                                }
-                                else if(j === 3){
-                                    web_parte = argumentos[j];
-                                }
-                            }
-                            
-                            var web_id_da_tb_usuario_str = importar_Para_Alfabeto_JM( web_id_da_tb_usuario.trim() ).trim().toUpperCase();                        
-                            var web_id_usuario_da_linha = importar_Para_Alfabeto_JM( web_id_usuario.trim() ).trim().toUpperCase();
-                            if( verificar_igualdade_sem_espaco_no_final( web_id_da_tb_usuario_str, web_id_usuario_da_linha ) === true ){   
-                                
-                                retorno += web_parte;
-                            }
-                        }else{
-                                                       
-                        }
-                    }                   
-                }
-                //}, 0);
-            
-            }catch(Exception){
-                
-                document.getElementById("resposta").innerHTML = "fazerRequisicao -- " + Exception;
-            } 
-            
-            return retorno;
-        }
-///////////////////////////////////////////////////////////////////////////////////////////////////////////   
-//PEGANDO APENAS A IMAGEM DO USUÁRIO LOGADO 
-/////////////////////////////////////////////////////////////////////////////////////////////////////////// 

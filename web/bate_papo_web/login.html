@@ -37,7 +37,10 @@
         
         <!-- <script type="text/javascript" src='../arquivos/js/js_bate_papo_web/js_login_001.js'></script> --> 
        
-        <style>          
+        <style>
+            
+            .per { box-shadow: 0px 0px 10px #222; }
+            .per:hover { box-shadow: 10px 10px 10px #422; }
         </style>
     </head>
     
@@ -434,171 +437,7 @@
             }     
         }
 ///////////////////////////////////////////////////////////////////////////////////////////////////////////   
-///////////////////////////////////////////////////////////////////////////////////////////////////////////
-
-
-
-///////////////////////////////////////////////////////////////////////////////////////////////////////////   
-//GERAR TELAS DE CONVERSAS
-/////////////////////////////////////////////////////////////////////////////////////////////////////////// 
-//  
-///////////////////////////////////////////////////////////////////////////////////////////////////////////   
-//GERAR TELAS DE CONVERSAS
-///////////////////////////////////////////////////////////////////////////////////////////////////////////   
-
-
-
-
-///////////////////////////////////////////////////////////////////////////////////////////////////////////   
-///////////////////////////////////////////////////////////////////////////////////////////////////////////
-        function preview_image(input) {
-            
-            try{
-                
-                ///001 txt////////////////////////
-                var file = input.files[0];
-                if (input.files && input.files[0]) {
-                    var reader = new FileReader();
-                    reader.onload = function(event){
-                        /////////////////////////////////////////////////////////////
-                        var output = document.getElementById('output_image');
-                        //output.src = URL.createObjectURL( file );
-                        ////////////////////////////////////////////////////////////
-                        
-                        ////////////////////////////////////////////////////////////
-                        var text = reader.result;
-                        //document.getElementById("div_novo_usuario").innerHTML = text;
-                        ////////////////////////////////////////////////////////////
-                        
-                        ////////////////////////////////////////////////////////////
-                        const blob = new Blob( [text],{type: file.type } );
-                        console.log(blob);
-                        const url = URL.createObjectURL(blob);
-                        
-                        let img = new Image()
-                        img.onload = () => {
-                            URL.revokeObjectURL(url)
-                            resolve(img)
-                        }
-                        img.src = url;
-                        output.src = url;
-                        ////////////////////////////////////////////////////////////
-                        
-                        
-                    };
-                    reader.readAsText( file );
-                }
-                ///001 txt////////////////////////
-                
-                ///002 blob////////////////////////                
-                //let blob = new Blob([new Uint8Array( file )], {type: file.type });
-                //console.log(blob);
-                //let text = blob.text();
-                //document.getElementById("div_novo_usuario").innerHTML = text;
-                ///002 blob////////////////////////
-            
-            }catch(Exception){
-                
-                document.getElementById("div_novo_usuario").innerHTML = "preview_image -- " + Exception;
-            } 
-        }
-///////////////////////////////////////////////////////////////////////////////////////////////////////////   
-///////////////////////////////////////////////////////////////////////////////////////////////////////////
-
-
-
-
-
-
-
-
-        
-    
-        function Bate_Papo_Web_0005_Separando_por_Linha_as_Mensagens(mensagem){
-            
-            try{
-                                                
-                var sb = "";
-            
-                var str = mensagem.split("@");
-            
-                for( var i = 0; i < str.length; i++ ) {
-
-                    if( str[i].includes("-") ){
-                    
-                        //sb.push( str[i] );
-                        //sb.push( "\n" );
-                        sb += str[i];
-                        sb += "\n";
-                        verificando_linha( str[i] );
-                    }
-                }
-                
-                var txt = sb.replace("\n","<br>");
-            
-                //document.getElementById("resposta").innerHTML = txt;
-                //verificano_linha( sb.toString() );
-                
-            }catch(Exception){
-                
-                document.getElementById("resposta").innerHTML = "Bate_Papo_Web_0005_Separando_por_Linha_as_Mensagens -- " + Exception;
-            }
-        }
-        
-        function verificando_linha(linha_recebida){
-            
-            try{
-                //document.getElementById("resposta").innerHTML = linha_recebida;
-
-                document.getElementById("resposta").innerHTML = 
-                        "<ul id=\"ul_resposta\" style=\"list-style:none; padding: 0px; margin: 0px;\"> </ul>";                
-
-                var usuario;
-                var senha;
-                var argumentos = linha_recebida.split("j");
-                for( var i = 0; i < argumentos.length; i++ ) {
-                    
-                    if(i === 0){
-                        usuario = argumentos[i];
-                    }
-                    else if(i === 1){
-                        senha = argumentos[i];
-                    }
-                    
-                    //var dados_anteriores = document.getElementById("ul_resposta").innerHTML;
-                    
-                    //var temp = "<li>" + argumentos[i] + "</li>";
-                    
-                    //document.getElementById("ul_resposta").innerHTML = dados_anteriores + temp;
-                }
-                
-                transformando_para_txt( usuario, senha );
-                                
-            }catch(Exception){
-                
-                document.getElementById("resposta").innerText = "verificando_linha -- " + Exception;
-            }
-        }
-        
-        function transformando_para_txt( usuario, senha ){
-            
-            try{
-                
-                //var temp = "<li>" + usuario + "</li>";
-                //var temp2 = "<li>" + senha + "</li>";                
-                //document.getElementById("ul_resposta").innerHTML = temp + temp2;
-                
-                var usuario_txt = "<li>" + importar_Para_Alfabeto_JM(usuario) + "</li>";
-                var senha_txt = "<li>" + importar_Para_Alfabeto_JM(senha) + "</li>";
-                
-                document.getElementById("ul_resposta").innerHTML = usuario_txt + senha_txt;
-                                
-            }catch(Exception){
-                
-                document.getElementById("resposta").innerText = "transformando_para_txt -- " + Exception;
-            }
-        }
-        
+///////////////////////////////////////////////////////////////////////////////////////////////////////////        
         
         
     </script>
@@ -745,7 +584,7 @@
                                     <td align="center">
                                         <ul style="list-style:none; padding: 0px; margin: 0px; width:100%;" >
                                             <li style="width:100%; background-color: #3A3A3A; color:#fff; font-family:  Arial, Helvetica, sans-serif; font-size: 120%;">
-                                                Email ou (DDD + Telefone):
+                                                DDD + Telefone:
                                             </li>
                                             <li style="">
                                                 <input id="form_novo_login" name="login" type="text" style="background-color: #3A3A3A; height: 50px; color:#fff; font-family:  Arial, Helvetica, sans-serif; font-size: 150%;" value="">
@@ -779,7 +618,7 @@
                                     <td align="center">
                                         <ul style="list-style:none; padding: 0px; margin: 0px; width:100%;" >
                                             <li style="width:100%; background-color: #3A3A3A; color:#fff; font-family:  Arial, Helvetica, sans-serif; font-size: 120%;">
-                                                Nome:
+                                                Seu Primeiro Nome:
                                             </li>
                                             <li style="">
                                                 <input id="form_novo_nome" name="nome" type="text" style="background-color: #3A3A3A; height: 50px; color:#fff; font-family:  Arial, Helvetica, sans-serif; font-size: 150%;" value="">
@@ -796,7 +635,7 @@
                                     <td align="center">
                                         <ul style="list-style:none; padding: 0px; margin: 0px; width:100%;" >
                                             <li style="width:100%; background-color: #3A3A3A; color:#fff; font-family:  Arial, Helvetica, sans-serif; font-size: 120%;">
-                                                Email de Recuperação da Senha:
+                                                Email de Recuperação da Conta:
                                             </li>
                                             <li style="">
                                                 <input id="form_novo_recuperacao" name="nome" type="text" style="background-color: #3A3A3A; height: 50px; color:#fff; font-family:  Arial, Helvetica, sans-serif; font-size: 150%;" value="">
@@ -807,56 +646,13 @@
                             </table> 
                         </li> 
                         
-                        <!--
                         <li style="padding-top: 5px; ">
                             <table border="0" cellpadding="0" cellspacing="0" style="width:100%; padding: 0; margin: 0; ">
                                 <tr>
                                     <td align="center">
                                         <ul style="list-style:none; padding: 0px; margin: 0px; width:100%;" >
                                             <li style="width:100%; background-color: #3A3A3A; color:#fff; font-family:  Arial, Helvetica, sans-serif; font-size: 120%;">
-                                                Endereço Web Imagem Perfil:
-                                            </li>
-                                            <li style="">
-                                                <input id="form_novo_imagem" name="nome" type="text" style="background-color: #3A3A3A; height: 50px; color:#fff; font-family:  Arial, Helvetica, sans-serif; font-size: 150%;" value="">
-                                            </li>
-                                        </ul>                                                                         
-                                    </td>
-                                </tr>
-                            </table> 
-                        </li> 
-                        
-                        <li style="padding-top: 5px; ">
-                            <table border="0" cellpadding="0" cellspacing="0" style="width:100%; padding: 0; margin: 0;">
-                                <tr>
-                                    <td align="center">
-                                        <ul style="list-style:none; padding: 0px; margin: 0px; width:100%;" >
-
-                                            <li style="">
-                                                <img src="../arquivos/imagens/003_login/logo2.png" 
-                                                    style="cursor: pointer; "
-                                                    onclick="inicioCadastrarTabelaLogin(
-                                                        document.getElementById ('form_novo_login').value,
-                                                        document.getElementById ('form_novo_senha').value,
-                                                        document.getElementById ('form_novo_nome').value,
-                                                        document.getElementById ('form_novo_recuperacao').value,
-                                                        document.getElementById ('form_novo_imagem').value,
-                                                        document.getElementById ('resposta').innerHTML );"
-                                                    alt="" width="140" height="50">
-                                            </li>
-                                        </ul>                                                                         
-                                    </td>
-                                </tr>
-                            </table> 
-                        </li>
-                        -->
-                        
-                        <li style="padding-top: 5px; ">
-                            <table border="0" cellpadding="0" cellspacing="0" style="width:100%; padding: 0; margin: 0; ">
-                                <tr>
-                                    <td align="center">
-                                        <ul style="list-style:none; padding: 0px; margin: 0px; width:100%;" >
-                                            <li style="width:100%; background-color: #3A3A3A; color:#fff; font-family:  Arial, Helvetica, sans-serif; font-size: 120%;">
-                                                Escolher Imagem do Perfil:
+                                                Escolher Imagem do Seu Perfil:
                                             </li>
                                             <li style="">
                                                 <input id="form_novo_imagem" type="file" onchange="encodeImageFileAsURL();" style="background-color: #3A3A3A; height: 50px; color:#fff; font-family:  Arial, Helvetica, sans-serif; font-size: 90%;" >
@@ -874,7 +670,7 @@
                                         <ul style="list-style:none; padding: 0px; margin: 0px; width:100%;" >
 
                                             <li style="">
-                                                <img src="../arquivos/imagens/003_login/logo2.png" 
+                                                <img src="../arquivos/imagens/003_login/cadastrar.png" 
                                                     style="cursor: pointer; "
                                                     onclick="inicioCadastrarTabelaLogin(
                                                         document.getElementById ('form_novo_login').value,
@@ -1403,6 +1199,96 @@
 
 
 
+
+
+
+
+
+<!-- +++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++ 
+-0
+-1
+-2
+- #### APÓS O LOGIN #### --> 
+<!-- 
+-0
+-1 
+-2    
++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++-->     
+<div id="apos_o_login" style="display: none; width:100%; padding: 0; margin: 0;">
+ 
+<ul style="list-style:none; padding: 0px; margin: 0px; width:100%;" >
+    
+    <li style="padding: 0px; margin: 0px; width:100%; color:black; font-family:  Arial, Helvetica, sans-serif; font-size: 150%;">
+        
+        <img src="../arquivos/imagens/002_menu/impressora.png" 
+                                                    style="cursor: pointer; float: left; padding-left: 5px; padding-top: 2px;"
+                                                    onclick="printDiv('apos_o_login');"
+                                                    alt="Imprimit" width="30" height="30px">
+        
+        <img src="../arquivos/imagens/003_login/voltar.png" 
+                                                    style="cursor: pointer; float: right"
+                                                    onclick="window.open('../index.html', '_parent');"
+                                                    title="Voltar" width="80" height="30px">
+    </li> 
+                            
+    <li align="center"  style="padding: 0px; margin: 0px; width:100%; color:black; font-family:  Arial, Helvetica, sans-serif; font-size: 150%;">
+        
+        <h1 align="center" style="font:bold 150% verdana,arial,helvetica;" >
+            
+            CONTROLE DE VALIDADE 
+        </h1>
+        
+    </li> 
+
+    <li style="">
+        
+        <table border="0" cellpadding="0" cellspacing="0" style="width:100%; padding: 0; margin: 0;">
+            
+            <tr>
+                
+                <td align="center" >
+                    
+                    <ul style="list-style:none; padding: 0px; margin: 0px; " >
+                    
+                        <li style="padding-bottom: 10;" >
+                            <img class="per"  src="../arquivos/imagens/003_login/adicionar_produto.png" alt=" " onclick="m1();" width="250px" height="300px" style="cursor: pointer; " > 
+                        </li>    
+                        
+                        <li style="padding-bottom: 10;" >
+                            <img class="per"  src="../arquivos/imagens/003_login/listar_todos_os_produtos.png" alt=" " onclick="window.open('../controle_de_validade/controle_de_validade_0003_01_visualizar_lista_de_produtos.html', '_blank ');" width="250px" height="300px" style="cursor: pointer;" > 
+                        </li>   
+                        
+                        <li style="padding-bottom: 10;" >
+                            <img class="per"  src="../arquivos/imagens/003_login/pesquisar_por_ean.png" alt=" " onclick="window.open('../produto_por_ean/produto_por_ean_0001_01_consultar_produto_ou_lista_de_produtos.html', '_blank ');" width="250px" height="300px" style="cursor: pointer;" > 
+                        </li>    
+                    </ul>    
+                </td>    
+            </tr>
+        </table>
+    </li>
+</ul>    
+        
+</div>
+<!-- +++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++ 
+-0
+-1
+-2
+- #### APÓS O LOGIN #### --> 
+<!-- 
+-0
+-1 
+-2    
++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++--> 
+
+
+
+
+
+
+
+
+
+
 <!-- 
 -0
 -1
@@ -1428,7 +1314,7 @@
     try{
         
         $.ajax({
-            url: ur__planilha_login,
+            url: url_planilha_tabela_usuarios,
             success: function(data) {
                 document.getElementById("tabela_usuarios").value = JSON.stringify(data);
             },
@@ -1445,7 +1331,7 @@
     try{
         
         $.ajax({
-            url: ur__planilha_imagens_users,
+            url: url_planilha_tabela_imagens_dos_contatos,
             success: function(data) {
                 document.getElementById("tabela_imagens_dos_contatos").value = JSON.stringify(data);
             },

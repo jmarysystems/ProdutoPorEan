@@ -30,7 +30,14 @@
     <body 
         style="background-color: #D3D3D3; width: 100%; height: 100%; padding: 0; margin: 0;
                font-family: Arial, Helvetica, sans-serif; font-size: 14px; color: black; line-height: 1.5;" > 
+
+
         
+    <!-- input(S) ################################################################# -->         
+        <input type="hidden" id="usuario_logado_id_nome" value="null">
+<!-- input(S) ################################################################# -->    
+
+
 
 <!-- +++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++ 
 -0
@@ -95,19 +102,10 @@
         > 
             -)-> CONTROLE DE VALIDADE <-(- </a>  
         
-        <a 
-            href="controle_de_validade_0001_01_adiciona_produto.html" 
-            style="
-                float:           right;
-                color:           #fff; font-family:  Arial, Helvetica, sans-serif; 
-                font-size:       19px; padding-left: 10px; 
-                padding-right:   10px; line-height:  50px; 
-                text-decoration: none;"
-           
-            onMouseover=" this.style.color='black'; "
-            onMouseout="  this.style.color='#fff'; "       
-        > 
-            Sair </a>  
+        
+        
+        
+        
         
     </li>  
 <!-- 
@@ -150,10 +148,11 @@
     
     <li style="padding: 0px; margin: 0px; width:100%; color:black; font-family:  Arial, Helvetica, sans-serif; font-size: 150%;">
         
-        <img src="../arquivos/imagens/002_menu/impressora.png" 
-                                                    style="cursor: pointer; float: left; padding-left: 5px; padding-top: 2px;"
-                                                    onclick="printDiv('div_consultar_produto');"
-                                                    alt="Imprimit" width="30" height="30px">
+        <img src="../arquivos/imagens/003_login/voltar.png" 
+            style="cursor: pointer; float: left; width:80px; height:30px;"
+            onclick="window.open('controle_de_validade_0000_01_pagina_inicial.html'  + '?' + 'nome_do_usuario' + '=' + document.getElementById('usuario_logado_id_nome').value, 
+                '_parent');"
+            title="Voltar" >
         
         <img id="btn" src="../arquivos/imagens/003_login/app.png" 
                                                     style="cursor: pointer; float: right"
@@ -232,6 +231,7 @@
         <img src="../arquivos/imagens/003_login/enviar.png" 
                     style="cursor: pointer; padding-top: 1px;"
                     onclick="adicionar_produto(
+                        document.getElementById ('usuario_logado_id_nome').value,        
                         document.getElementById ('ean_manual').value,
                         document.getElementById ('qtd_ean').value,
                         document.getElementById ('data_ean').value,
@@ -302,8 +302,19 @@
             //alert(
             //    'Parametro na memória: ' + x + '\n' 
             //);
-                                                        
-            if( cont === 1 ){
+            
+            if( cont === 0 ){
+
+                if( parametros[cont] !== undefined ){
+                
+                    var dados = parametros[cont].split('=');              
+                    var nome_do_parametro = dados[0];
+                    var valor_do_parametro = dados[1];
+                    
+                    document.getElementById("usuario_logado_id_nome").value = valor_do_parametro;    
+                }
+            }                                                        
+            else if( cont === 1 ){
 
                 if( parametros[cont] !== undefined ){
                 

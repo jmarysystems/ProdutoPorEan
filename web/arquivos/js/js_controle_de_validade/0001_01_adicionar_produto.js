@@ -3,7 +3,7 @@
  * and open the template in the editor.
  */
 
-function adicionar_produto( ean, quantidade, data, html_da_div_consultar_produto ){
+function adicionar_produto( usuario_logado_nome, ean, quantidade, data, html_da_div_consultar_produto ){
             
     try{
                 
@@ -27,7 +27,7 @@ function adicionar_produto( ean, quantidade, data, html_da_div_consultar_produto
                 
             setTimeout(function(){ 
                         
-                window.open('controle_de_validade_0002_01_visualizar_produto.html?' + "ean" + "=" + ean.trim() + "&" + "ean" + "=" + ean.trim() + "&" + "quantidade" + "=" + quantidade.trim() + "&" + "data" + "=" + data.trim(), '_parent');
+                window.open('controle_de_validade_0002_01_visualizar_produto.html?' + "usuario_logado" + "=" + usuario_logado_nome.trim() + "&" + "ean" + "=" + ean.trim() + "&" + "quantidade" + "=" + quantidade.trim() + "&" + "data" + "=" + data.trim(), '_parent');
       
             }, 0);
 

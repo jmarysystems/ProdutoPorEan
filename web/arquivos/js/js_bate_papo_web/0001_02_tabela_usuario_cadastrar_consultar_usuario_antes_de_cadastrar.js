@@ -13,15 +13,15 @@
                                 imagem_endereco_web_digitado,
                                     conteudo_div){  
             if (usuario_digitado === "" || usuario_digitado === null){
-                alert("Para criar um novo usuário Cara Pálida:\n01 informe o Email ou (DDD + Telefone)\n02 informe a senha\n03 informe o nome do usuário");
+                alert("Para criar um novo usuário:\n01 informe o DDD + Telefone\n02 informe a senha\n03 informe o nome do usuário");
             }
             else if (senha_digitada === "" || senha_digitada === null){
                 
-                alert("Para efetuar login:\n01 informe o email do usuário\n02 informe a senha\n03 informe o nome do usuário");
+                alert("Para criar um novo usuário:\n01 informe o DDD + Telefone\n02 informe a senha\n03 informe o nome do usuário");
             }
             else if (nome_digitado === "" || nome_digitado === null){
                 
-                alert("Para efetuar login:\n01 informe o email do usuário\n02 informe a senha\n03 informe o nome do usuário");
+                alert("Para criar um novo usuário:\n01 informe o DDD + Telefone\n02 informe a senha\n03 informe o nome do usuário");
             }
             else{
                                 
@@ -48,7 +48,7 @@
                             email_de_recuperacao_recebido, 
                                 imagem_endereco_web_digitado_recebido, 
                                     conteudo_div){
-            if( count_x < 20 ){      
+            if( count_x < 5 ){      
                 
                 setTimeout(function(){ 
                      var count_xx = count_x + 1;
@@ -80,8 +80,6 @@
                                     conteudo_div){
             
             try{
-                var id_planilha = "1UHCZa_LGpJ1pnY4HI0DhuuaBpjtmpp_Hpih-q1BiFVk";
-                var urlxx = "https://sheets.googleapis.com/v4/spreadsheets/"+ id_planilha +"/values/A:B?key=AIzaSyBwiMCywJRFQHuuksWdhqwjOrR5mDaWJYs";
 
 ////////////////////////////////////////////////////////////////////////////
                 setTimeout(function(){ 
@@ -99,8 +97,7 @@
                 }, 0);
 ////////////////////////////////////////////////////////////////////////////
 
-                var url = urlxx;
-                jQuery.getJSON(url).success(function(data) {
+                jQuery.getJSON( url_planilha_tabela_usuarios ).success(function(data) {
                     //console.log(data); 
                     //alert( JSON.stringify(data) );
                     _03_controle_verificar_se_tem_mensagem_usuario_cad(
@@ -122,6 +119,8 @@
                                         email_de_recuperacao_recebido, 
                                             imagem_endereco_web_digitado_recebido, 
                                                 conteudo_div);
+                                                
+                    //console.log('cleilson! ' + message);                            
                 }).complete(function() {
                     //console.log('completed!');                    
                 });
@@ -164,6 +163,12 @@
                 }
                 else{
                     
+                    //alert( mensagem_x );
+                    
+                    //Tabela baixada e nenhum usuário cadastrado - cadastrando...
+                    cadastrarTabelaLogin(usuario_digitado_recebido, senha_digitada_recebido, nome_digitado_recebido, email_de_recuperacao_recebido, imagem_endereco_web_digitado_recebido, conteudo_div);
+                    
+                    /*
                     _01_controle_loop_usuario_cad(
                         count_x,    
                             usuario_digitado_recebido, 
@@ -172,6 +177,7 @@
                                         email_de_recuperacao_recebido, 
                                             imagem_endereco_web_digitado_recebido, 
                                                 conteudo_div);
+                    */
                 }
             }
             catch(Exception){}
@@ -252,7 +258,7 @@
                 }
                 else{
                     
-                    alert("Usuário: " + usuario_digitado_recebido + "\nJá cadastrado" + "\n\nEscolha um E-mail ou número de telefone diferente para cadastrar um novo usuário\n\nEste já existe." );
+                    alert("Usuário: " + usuario_digitado_recebido + "\nJá cadastrado" + "\n\nEscolha um número de telefone diferente para cadastrar um novo usuário\n\nEste já está cadastrado." );
                 
                     document.getElementById("resposta").innerHTML = conteudo_div;
                                     document.getElementById("resposta").style.display = 'none'; 
@@ -295,10 +301,6 @@
                      
                     var comando = "cadastrar";
                     
-                    var id_formulario_id = "1FAIpQLSfLwoOJdFO-60HmWz7t3rF21hbCA7s7JpyqdMcM7_3RxT0Ieg";
-                
-                    var id_txt = "833181104";
-                    
                     //////////////////////////////////////////
                     var jm_id = exportar_Para_Alfabeto_JM_Sem_Arroba( id.trim() );
                     var jm_comando = exportar_Para_Alfabeto_JM_Sem_Arroba( comando.trim() );
@@ -309,10 +311,12 @@
                     //alert( "nome_digitado = " + nome_digitado + " -- " + "jm_nome_digitado " + jm_nome_digitado );
                     
                     var jm_email_de_recuperacao = "null";
+                    var jm_email_de_recuperacao_digitado = "null";
                     if (email_de_recuperacao === "" || email_de_recuperacao === null){
                         
                     }
                     else{
+                        jm_email_de_recuperacao_digitado = email_de_recuperacao.trim();
                         jm_email_de_recuperacao = exportar_Para_Alfabeto_JM_Sem_Arroba( email_de_recuperacao.trim() );
                     }
 
@@ -341,21 +345,34 @@
                             jm_imagem_endereco_web_digitado + "@";
                     //////////////////////////////////////////
                 
-                    var GET_URL = "https://docs.google.com/forms/d/e/" + id_formulario_id + "/formResponse" +
-                            "?entry." + id_txt + "=" + id_txt2;
+                    var GET_URL = "https://docs.google.com/forms/d/e/" + id_formulario_tabela_usuarios + "/formResponse" +
+                            "?entry." + entry_texto_formulario_tabela_usuarios + "=" + id_txt2 +
+                            "&entry." + entry_id_formulario_tabela_usuarios + "=" + id.trim() +
+                            "&entry." + entry_comando_formulario_tabela_usuarios + "=" + comando.trim() +
+                            "&entry." + entry_telefone_formulario_tabela_usuarios + "=" + usuario_digitado.trim() +
+                            "&entry." + entry_nome_usuario_formulario_tabela_usuarios + "=" + nome_digitado.trim() +
+                            "&entry." + entry_email_de_recuperacao_formulario_tabela_usuarios + "=" + jm_email_de_recuperacao_digitado.trim();
                     
                     try{
+                        
+                        //**//                            
+                        $.post( GET_URL,
+                            function(data, status){
+                                alert("Data: " + data + "\nStatus: " + status);
+                            }
+                        );
+                        //**//
 
-                        var xhttp = new XMLHttpRequest();
-                        xhttp.open("GET", GET_URL, false);
-                        xhttp.send();//A execução do script pára aqui até a requisição retornar do servidor
+                        //var xhttp = new XMLHttpRequest();
+                        //xhttp.open("GET", GET_URL, false);
+                        //xhttp.send();//A execução do script pára aqui até a requisição retornar do servidor
 
                     }catch(Exception){
                 
                         //alert("jm_id " + jm_id + " - " + "id " + id);
                        //document.getElementById("resposta").innerHTML = "Erro xhttp - cadastrarTabelaLogin -- <br>" + Exception;
                     }
-
+                                            
                     alert("Usuário: " + usuario_digitado + " OK\nCadastrado com sucesso!");
                     document.getElementById("resposta").innerHTML = conteudo_div;
                     document.getElementById("resposta").style.display = 'block'; 
@@ -364,7 +381,7 @@
                     
                     document.getElementById("div_conversa").style.display = 'none';                 
                     
-                }, 500);
+                }, 0);
             
             }catch(Exception){
                 
@@ -376,9 +393,6 @@
             
             try{
                 setTimeout(function(){ 
-                    
-                    var id_formulario_id = "1FAIpQLSfusUTi_J7wrIs49E38puZf1vqIIYZOxkahNb4xideZCDo8Dg";
-                    var id_txt = "833181104";
 
                     ////////////////////////////////////////////////////////////
                     var parte = "";
@@ -396,8 +410,16 @@
                             try{
                                 var id_txt2 = "@" + id_usuario + "j" + email_usuario + "j" + contador  + "j" + parte + "@";
                                                                                 
-                                var GET_URL = "https://docs.google.com/forms/d/e/" + id_formulario_id + "/formResponse" +
-                                    "?entry." + id_txt + "=" + id_txt2;
+                                var GET_URL = "https://docs.google.com/forms/d/e/" + id_formulario_tabela_imagens_dos_contatos + "/formResponse" +
+                                    "?entry." + entry_texto_formulario_tabela_imagens_dos_contatos + "=" + id_txt2;
+                            
+                                /*                            
+                                $.post( GET_URL,
+                                    function(data, status){
+                                        alert("Data: " + data + "\nStatus: " + status);
+                                     }
+                                );
+                                */
                             
                                 var xhttp = new XMLHttpRequest();
                                 xhttp.open("GET", GET_URL, false);
@@ -433,8 +455,16 @@
                                 contador  + "j" + 
                                 parte + "@";
                             
-                                var GET_URL = "https://docs.google.com/forms/d/e/" + id_formulario_id + "/formResponse" +
-                                    "?entry." + id_txt + "=" + id_txt2;
+                                var GET_URL = "https://docs.google.com/forms/d/e/" + id_formulario_tabela_imagens_dos_contatos + "/formResponse" +
+                                    "?entry." + entry_texto_formulario_tabela_imagens_dos_contatos + "=" + id_txt2;
+                            
+                                /*                            
+                                $.post( GET_URL,
+                                    function(data, status){
+                                        alert("Data: " + data + "\nStatus: " + status);
+                                     }
+                                );
+                                */
                             
                                 var xhttp = new XMLHttpRequest();
                                 xhttp.open("GET", GET_URL, false);

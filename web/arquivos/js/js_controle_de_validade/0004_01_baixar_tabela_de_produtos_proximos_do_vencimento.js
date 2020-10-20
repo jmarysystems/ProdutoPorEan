@@ -16,7 +16,7 @@
         }
 
         function _01_controle_loop_baixar_tabela_de_produtos_proximos_do_vencimento( count_x ){
-            if( count_x < 20 ){      
+            if( count_x < 5 ){      
                 
                 setTimeout(function(){ 
                     var count_xx = count_x + 1;
@@ -58,6 +58,7 @@
                         document.getElementById("lista_de_produtos_controle_de_vencimento").innerHTML = "";
                     }, 0);
                     setTimeout(function(){ 
+                        
                         listar_produtos_da_tabela_de_produtos_proximos_do_vencimento();
                     }, 0);
                     ////////////////////////////////////////////////////////////////////////////                    
