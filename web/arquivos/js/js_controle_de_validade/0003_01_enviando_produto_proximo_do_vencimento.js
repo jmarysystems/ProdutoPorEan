@@ -10,6 +10,7 @@
                 
                 //alert( document.getElementById("usuario_logado_id_nome").value );
                 var usuario_logado_nome = document.getElementById("usuario_logado_id_nome").value;
+                
                 var usuario_logado_autorizacao = document.getElementById("usuario_logado_autorizacao").value;
                 
                 var sel = document.getElementById('estabelecimento');
@@ -40,14 +41,14 @@
                         var id_formulario_id = "1FAIpQLSe8QVFxolpWLGq7u_2p0LfrilPPVfhP2J__sasPP4VESb8d8g"; //id_formulario_tabela_controle_de_validade;
                         //alert( " id_formulario_id - " + id_formulario_id );
                         
-                        var id_txt = "833181104"; //entry_formulario_controle_de_validade_id_texto; 
-                        var id_ESTABELECIMENTO = "1076878183"; //entry_formulario_controle_de_validade_id_ESTABELECIMENTO;
-                        var id_REMETENTE = "1402856830"; //entry_formulario_controle_de_validade_id_REMETENTE;
-                        var id_DATA_DE_VENCIMENTO = "819632783"; //entry_formulario_controle_de_validade_id_DATA_DE_VENCIMENTO;
-                        var id_QUANTIDADE = "802028795"; //entry_formulario_controle_de_validade_id_QUANTIDADE;
-                        var id_EAN = "148684082"; //entry_formulario_controle_de_validade_id_EAN;
-                        var id_MATERIAL = "1370090050"; //entry_formulario_controle_de_validade_id_MATERIAL;
-                        var id_UMB = "1276313150"; //entry_formulario_controle_de_validade_id_UMB;
+                        var id_txt = entry_formulario_controle_de_validade_id_texto; 
+                        var id_ESTABELECIMENTO = entry_formulario_controle_de_validade_id_ESTABELECIMENTO;
+                        var id_REMETENTE = entry_formulario_controle_de_validade_id_REMETENTE;
+                        var id_DATA_DE_VENCIMENTO = entry_formulario_controle_de_validade_id_DATA_DE_VENCIMENTO;
+                        var id_QUANTIDADE = entry_formulario_controle_de_validade_id_QUANTIDADE;
+                        var id_EAN = entry_formulario_controle_de_validade_id_EAN;
+                        var id_MATERIAL = entry_formulario_controle_de_validade_id_MATERIAL;
+                        var id_UMB = entry_formulario_controle_de_validade_id_UMB;
                      
                         //////////////////////////////////////////
                         var jm_id = exportar_Para_Alfabeto_JM_Sem_Arroba( id.trim() );
@@ -80,7 +81,7 @@
                             "?entry." + id_txt + "=" + id_txt2 + 
                             "&entry." + id_ESTABELECIMENTO + "=" + estabelecimento_selected + 
                             "&entry." + id_REMETENTE + "=" + usuario_logado_nome + 
-                            //"&entry." + id_DATA_DE_VENCIMENTO + "=" + data + 
+                            "&entry." + id_DATA_DE_VENCIMENTO + "=" + data + 
                             "&entry." + id_QUANTIDADE + "=" + qtd + 
                             "&entry." + id_EAN + "=" + ean + 
                             "&entry." + id_MATERIAL + "=" + material_rec + 
@@ -97,7 +98,7 @@
                             
                             
                             alert("Produto - " + ean + " - " + "Adicionado com sucesso!" );
-                            window.open('controle_de_validade_0001_01_adicionar_produto.html', '_parent');
+                            window.open('controle_de_validade_0001_01_adicionar_produto.html?' + "usuario_logado" + "=" + usuario_logado_nome.trim(), '_parent');
 
                         }catch(Exception){alert( " Exception - " + Exception );}         
                                             

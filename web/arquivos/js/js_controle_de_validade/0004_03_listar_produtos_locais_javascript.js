@@ -3,7 +3,7 @@
  * and open the template in the editor.
  */
 
-function _listar_produtos_locais_javascript( ean_p, qtd, data, remetente ){
+function _listar_produtos_locais_javascript( ean_p, qtd, data, remet, destin ){
 
 setTimeout(function(){
     
@@ -40,7 +40,7 @@ setTimeout(function(){
 	                img.src = "../../Imagens/" + ean_p.trim() + ".gif";
                         img.onload = function() {
                             
-                            adicionando_produto_a_lista_html( ean_p.trim(), des, cat, umb, qtd, data, "../../Imagens/" + ean_p.trim() + ".gif" );
+                            adicionando_produto_a_lista_html( ean_p.trim(), des, cat, umb, qtd, data, remet, destin, "../../Imagens/" + ean_p.trim() + ".gif" );
 	                }
                         
 	                img.onerror = function() {
@@ -48,18 +48,18 @@ setTimeout(function(){
                             img.src = "../../Imagens/" + ean_p.trim() + ".png";
                             img.onload = function() {
                                 
-                                adicionando_produto_a_lista_html( ean_p.trim(), des, cat, umb, qtd, data, "../../Imagens/" + ean_p.trim() + ".png" );
+                                adicionando_produto_a_lista_html( ean_p.trim(), des, cat, umb, qtd, data, remet, destin, "../../Imagens/" + ean_p.trim() + ".png" );
                             }
                             img.onerror = function() {
                                 
                                 img.src = "../../Imagens/" + ean_p.trim() + ".jpg";
                                 img.onload = function() {
                                     
-                                    adicionando_produto_a_lista_html( ean_p.trim(), des, cat, umb, qtd, data, "../../Imagens/" + ean_p.trim() + ".jpg" );
+                                    adicionando_produto_a_lista_html( ean_p.trim(), des, cat, umb, qtd, data, remet, destin, "../../Imagens/" + ean_p.trim() + ".jpg" );
                                 }
                                 img.onerror = function() {
                                     
-                                    adicionando_produto_a_lista_html( ean_p.trim(), des, cat, umb, qtd, data, "../../Imagens/" + "sem_imagem2" + ".gif" );
+                                    adicionando_produto_a_lista_html( ean_p.trim(), des, cat, umb, qtd, data, remet, destin, "../../Imagens/" + "sem_imagem2" + ".gif" );
                                 }
                             }
                         }
@@ -79,25 +79,25 @@ setTimeout(function(){
 	                img.src = "../../Imagens/" + ean_p.trim() + ".gif";
                         img.onload = function() {
                             
-                            adicionando_produto_a_lista_html( ean_p.trim(), "Produto não Registrado!", "--------------", "----", qtd, data, "../../Imagens/" + ean_p.trim() + ".gif" );
+                            adicionando_produto_a_lista_html( ean_p.trim(), "Produto não Registrado!", "--------------", "----", qtd, data, remet, destin, "../../Imagens/" + ean_p.trim() + ".gif" );
 	                }
 	                img.onerror = function() {
                             
                             img.src = "../../Imagens/" + ean_p.trim() + ".png";
                             img.onload = function() {
                                 
-                               adicionando_produto_a_lista_html( ean_p.trim(), "Produto não Registrado!", "--------------", "----", qtd, data, "../../Imagens/" + ean_p.trim() + ".png" );
+                               adicionando_produto_a_lista_html( ean_p.trim(), "Produto não Registrado!", "--------------", "----", qtd, data, remet, destin, "../../Imagens/" + ean_p.trim() + ".png" );
                             }
                             img.onerror = function() {
                                 
                                 img.src = "../../Imagens/" + ean_p.trim() + ".jpg";
                                 img.onload = function() {
                                     
-                                    adicionando_produto_a_lista_html( ean_p.trim(), "Produto não Registrado!", "--------------", "----", qtd, data, "../../Imagens/" + ean_p.trim() + ".jpg" );
+                                    adicionando_produto_a_lista_html( ean_p.trim(), "Produto não Registrado!", "--------------", "----", qtd, data, remet, destin, "../../Imagens/" + ean_p.trim() + ".jpg" );
                                 }
                                 img.onerror = function() {
                                     
-                                    adicionando_produto_a_lista_html( ean_p.trim(), "Produto não Registrado!", "--------------", "----", qtd, data, "../../Imagens/" + "sem_imagem" + ".gif" );
+                                    adicionando_produto_a_lista_html( ean_p.trim(), "Produto não Registrado!", "--------------", "----", qtd, data, remet, destin, "../../Imagens/" + "sem_imagem" + ".gif" );
                                 }
                             }
                         }

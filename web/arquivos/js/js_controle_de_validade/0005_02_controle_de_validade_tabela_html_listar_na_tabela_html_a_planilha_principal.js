@@ -75,37 +75,45 @@ function _0005_02_controle_de_validade_tabela_html_listar_na_tabela_html_a_plani
             if( linha_recebida[i].includes("-") ){
                 
                 //alert(linha_recebida[i]);
-            
-                var id = "";
-                var comando = "";
-                var usuario = "";
-                var senha = "";
-                var nome_digitado = "";
-                var email_de_recuperacao = "";
-                var imagem_endereco_web_digitado = "";
+                var jm_id = "";
+                var jm_comando = "";
+                var jm_auto_quantidade_de_alteracoes = "";                        
+                var jm_destinatario = "";
+                var jm_remetente = "";
+                var jm_data = "";
+                var jm_qtd = "";
+                var jm_ean = "";
+                var jm_material = "";
+                var jm_umb = "";
                 
                 var argumentos = linha_recebida[i].split("j");
                 
                 try{
                     
-                    id = argumentos[0];
-                    comando = argumentos[1];
-                    usuario = argumentos[2];
-                    senha = argumentos[3];
-                    nome_digitado = argumentos[4];
-                    email_de_recuperacao = argumentos[5];
-                    imagem_endereco_web_digitado = argumentos[6];
+                    jm_id = argumentos[0];
+                    jm_comando = argumentos[1];
+                    jm_auto_quantidade_de_alteracoes = argumentos[2];
+                    jm_destinatario = argumentos[3];
+                    jm_remetente = argumentos[4];
+                    jm_data = argumentos[5];
+                    jm_qtd = argumentos[6];
+                    jm_ean = argumentos[7];
+                    jm_material = argumentos[8];
+                    jm_umb = argumentos[9];
                 }catch(Exception){}
                                
                 $('#tabela > tbody:last').append(
                     '<tr>' + 
-                        '<td>' + importar_Para_Alfabeto_JM(id).trim() + '</td>' + 
-                        '<td>' + importar_Para_Alfabeto_JM(comando).trim() + '</td>' + 
-                        '<td>' + importar_Para_Alfabeto_JM(usuario).trim() + '</td>' + 
-                        '<td>' + importar_Para_Alfabeto_JM(senha).trim() + '</td>' + 
-                        '<td>' + importar_Para_Alfabeto_JM(nome_digitado).trim() + '</td>' + 
-                        '<td>' + importar_Para_Alfabeto_JM(email_de_recuperacao).trim() + '</td>' + 
-                        '<td>' + importar_Para_Alfabeto_JM(imagem_endereco_web_digitado).trim() + '</td>' + 
+                        '<td>' + importar_Para_Alfabeto_JM( jm_id ).trim() + '</td>' + 
+                        //'<td>' + importar_Para_Alfabeto_JM( jm_comando ).trim() + '</td>' + 
+                        //'<td>' + importar_Para_Alfabeto_JM( jm_auto_quantidade_de_alteracoes ).trim() + '</td>' + 
+                        '<td>' + importar_Para_Alfabeto_JM( jm_destinatario ).trim() + '</td>' + 
+                        '<td>' + importar_Para_Alfabeto_JM( jm_remetente ).trim() + '</td>' + 
+                        '<td>' + importar_Para_Alfabeto_JM( jm_data ).trim() + '</td>' + 
+                        '<td>' + importar_Para_Alfabeto_JM( jm_qtd ).trim() + '</td>' + 
+                        '<td NOWRAP=\'NOWRAP\'>' + importar_Para_Alfabeto_JM( jm_ean ).trim() + '</td>' + 
+                        '<td NOWRAP=\'NOWRAP\'>' + importar_Para_Alfabeto_JM( jm_material ).trim() + '</td>' + 
+                        '<td>' + importar_Para_Alfabeto_JM( jm_umb ).trim() + '</td>' + 
                     '</tr>'
                 );
 

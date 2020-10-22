@@ -3,7 +3,7 @@
  * and open the template in the editor.
  */
 
-function adicionando_produto_a_lista_html( ean, des, cat, umb,  qtd, data, end_img ) {
+function adicionando_produto_a_lista_html( ean, des, cat, umb,  qtd, data, remet, destin, end_img ) {
     
 setTimeout(function(){
 try{
@@ -219,7 +219,7 @@ try{
 "<!-- Nome +++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++ -->  " +
                                                                          "<tr>" +
 "                                                                            <td align='center' " + " style=\"padding: 0; margin: 0; width:100%; background-color: #3A3A3A; color:#fff; font-family:  Arial, Helvetica, sans-serif; font-size: 120%; \" >" +
-"                                                                                            " + "-" + 
+"                                                                                            " + remet + 
 "                                                                            </td>" +
 "                                                                        </tr>" +
                     
@@ -243,7 +243,7 @@ try{
 "<!-- Empresa +++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++ -->  " +
                                                                          "<tr>" +
 "                                                                            <td align='center' " + " style=\"padding: 0; margin: 0; width:100%; background-color: #3A3A3A; color:#fff; font-family:  Arial, Helvetica, sans-serif; font-size: 120%; \" >" +
-"                                                                                            " + "-" + 
+"                                                                                            " + destin + 
 "                                                                            </td>" +
 "                                                                        </tr>" +
                     

@@ -460,9 +460,9 @@
             document.getElementById("usuario_logado_imagem_sim_ou_null").value = imagem_user_logado; 
             
             /////////////////////////////////////////////////////////////////    apos_o_login
-                setTimeout(function(){ 
-                    document.getElementById( "resposta" ).innerHTML = document.getElementById( "apos_o_login" ).innerHTML;
-                }, 0);
+            //document.getElementById( "resposta" ).innerHTML = document.getElementById( "apos_o_login" ).innerHTML;
+            document.getElementById("resposta").style.display = 'none';
+            document.getElementById("apos_o_login").style.display = 'block';
             /////////////////////////////////////////////////////////////////
             
             //alert("_02_01_index_tabela_html_login_finalizando" + "\n - finalizando"  );
